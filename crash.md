@@ -3,6 +3,7 @@ layout: post
 title: "Crashcopter"
 subtitle: "Project"
 date: 2016-05-10
+permalink: /crash/
 ---
 DEVOs and Duct Tape
 
