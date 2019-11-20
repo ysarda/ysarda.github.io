@@ -3,7 +3,7 @@ layout: post
 title: "TVC"
 subtitle: "Project"
 date: 2019-12-12
-permalink: /crash/
+permalink: /tvc/
 ---
 DEVOs and Duct Tape
 
