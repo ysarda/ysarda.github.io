@@ -1,8 +1,8 @@
 # Site settings
 title: Portfolio
 description:
-baseurl: "/blog" # the subpath of your site, e.g. /blog
-url: "ysarda.github.io" # the base hostname & protocol for your site e.g. http://willianjusten.com.br
+#baseurl: "/blog" # the subpath of your site, e.g. /blog
+#url: "ysarda.github.io" # the base hostname & protocol for your site e.g. http://willianjusten.com.br
 
 # User settings
 username: Yash Sarda
