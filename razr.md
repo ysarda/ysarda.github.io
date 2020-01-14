@@ -1,8 +1,6 @@
 ---
-layout: post
+layout: project
 title: "RAZR"
-subtitle: "Project"
-date: 2019-12-12
 permalink: /razr/
 ---
 DEVOs and Duct Tape
