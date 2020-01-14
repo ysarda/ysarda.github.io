@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: base
 ---
 
 <!DOCTYPE html>
@@ -7,10 +7,12 @@ layout: default
 <head>
     <meta charset="UTF-8">
 </head>
-<body>
-
-      {{ content }}
-
-</body>
-</html>
-
+{% include head.html %}
+  <body>
+      {% include header.html %}
+      </section>
+        {{ content }}
+      {% include footer.html %}
+  </body>
+  
+<h1 class="project-name">{{ page.title | default: site.title }}</h1>
