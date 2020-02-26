@@ -1,8 +1,9 @@
 ---
-layout: post
+layout: project
 title: "Choice"
 permalink: /choice/
 ---
+# Choice
 
 I don’t like that I have to choose.
 
