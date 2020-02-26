@@ -3,11 +3,13 @@ layout: project
 title: "Spices and Rice"
 permalink: /spice/
 ---
+<p align="center">
+
 # Spices and Rice
 
-Spices and rice 
+### Spices and rice 
 
-are no causality.
+### are no causality.
 
 Vitality of a human being blooms
 
@@ -20,8 +22,11 @@ Herald the annual pleasure
 where new life begins,
 
 and everyone has something good to eat.
+
 Strip the cinnamon and boil the chickpea
+
 according to that cooking book,
+
 “Boil me some more.
 Some more,” she says, with swordlike skimming spoon.
 I can stir corn by myself.
