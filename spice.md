@@ -5,13 +5,20 @@ permalink: /spice/
 ---
 # Spices and Rice
 
-Spices and rice
+Spices and rice 
+
 are no causality.
+
 Vitality of a human being blooms
+
 when you drank rain in the garden.
+
 “There is no solace in hunger, only fires.”
+
 Herald the annual pleasure
+
 where new life begins,
+
 and everyone has something good to eat.
 Strip the cinnamon and boil the chickpea
 according to that cooking book,
