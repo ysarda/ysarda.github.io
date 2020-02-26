@@ -4,6 +4,8 @@ title: "Spices and Rice"
 permalink: /spice/
 ---
 
+<center>
+
 # Spices and Rice
 
 Spices and rice 
@@ -40,3 +42,4 @@ to you, but eats your food. You’re my cook, my driver,
 
 and my ego: “Persistence. I love your cooking.”
 
+</center>
