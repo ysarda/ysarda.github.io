@@ -3,7 +3,6 @@ layout: project
 title: "Spices and Rice"
 permalink: /spice/
 ---
-<p align="center">
 
 # Spices and Rice
 
@@ -41,4 +40,3 @@ to you, but eats your food. You’re my cook, my driver,
 
 and my ego: “Persistence. I love your cooking.”
 
-</p>
