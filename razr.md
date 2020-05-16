@@ -5,9 +5,9 @@ permalink: /razr/
 ---
 <center>
 
-# RASR
+<h1> RASR </h1>
 
-## Based on the principle of high-level information fusion, RASR takes NOAA Doppler Weather data, and re-purposes it for meteor and entering object detection
+<h2> Based on the principle of high-level information fusion, RASR takes NOAA Doppler Weather data, and re-purposes it for meteor and entering object detection </h2>
 
 RASR is an open source project based at The University of Texas at Austin, building on [ASTRIAGraph](http://astria.tacc.utexas.edu/AstriaGraph/)
 
