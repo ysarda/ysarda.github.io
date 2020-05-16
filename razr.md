@@ -3,7 +3,7 @@ layout: project
 title: "RAZR"
 permalink: /razr/
 ---
-<div align="center">
+->
 
 # RASR
 
@@ -17,4 +17,4 @@ Graduate Students: Benjamin Miller
 
 Undergraduate Students: Robby Keh, James Perlichek (Graduated), Yash Sarda
 
-</div>
+<-
