@@ -42,11 +42,11 @@ Figure: NEXRAD station coverage of the continental United States <br />
 
 <img alt="Map" src="{{ "/assets/img/rasr4.png" | prepend: site.baseurl }}" />
 
-Figure: NEXRAD station coverage of the continental United States <br />
+Figure: Detected phenomena for Ash Creek (outlined in blue). Left: radial velocity. Right: spectrum width <br />
 
 
 <img alt="Map" src="{{ "/assets/img/rasr5.png" | prepend: site.baseurl }}" />
 
-Figure: NEXRAD station coverage of the continental United States <br />
+Figure: Ash Creek detection visualized in Cesium (2 altitudes) <br />
 
 <center>
