@@ -26,13 +26,12 @@ Undergraduate Students: Rodrigo Ugalde (Graduated), Robby Keh, James Perlichek (
 <br />
 </p>
 
-
-<embed src="https://ysarda.github.io/assets/files/RASR.pdf" width="800px" height="1500px" />
-
-<br />
-<br />
-
 <div class="github-card" data-github="bgmiller100/rasr" data-width="400" data-height="" data-theme="default"></div>
 <script src="//cdn.jsdelivr.net/github-cards/latest/widget.js"></script>
+
+<br />
+<br />
+
+<embed src="https://ysarda.github.io/assets/files/RASR.pdf" width="800px" height="1500px" />
 
 <center>
