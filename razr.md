@@ -16,37 +16,15 @@ permalink: /razr/
 RASR is an open source project based at The University of Texas at Austin, building on <a href="http://astria.tacc.utexas.edu/AstriaGraph/">ASTRIAGraph</a>. With almost complete coverage of the continental United States, it seeks to detect the velocity signatures of entering objects using computer vision, specifically the Matplotlib and OpenCV Python libraries.
 <br />
 <br />
-PI: Dr. Moriba Jah <br />
-
-Graduate Students: Benjamin Miller <br />
-
-Undergraduate Students: Rodrigo Ugalde (Graduated), Robby Keh, James Perlichek (Graduated), Yash Sarda <br />
-
+PI: Dr. Moriba Jah
+<br />
+Graduate Students: Benjamin Miller
+<br />
+Undergraduate Students: Rodrigo Ugalde (Graduated), Robby Keh, James Perlichek (Graduated), Yash Sarda
+<br />
 </p>
 
 
-<img alt="Map" src="{{ "/assets/img/rasr1.png" | prepend: site.baseurl }}" />
-
-Figure: NEXRAD station coverage of the continental United States <br />
-
-
-<img alt="Map" src="{{ "/assets/img/rasr2.png" | prepend: site.baseurl }}" />
-
-Figure: NEXRAD station coverage of the continental United States <br />
-
-
-<img alt="Map" src="{{ "/assets/img/rasr3.png" | prepend: site.baseurl }}" />
-
-Figure: NEXRAD station coverage of the continental United States <br />
-
-
-<img alt="Map" src="{{ "/assets/img/rasr4.png" | prepend: site.baseurl }}" />
-
-Figure: Detected phenomena for Ash Creek (outlined in blue). Left: radial velocity. Right: spectrum width <br />
-
-
-<img alt="Map" src="{{ "/assets/img/rasr5.png" | prepend: site.baseurl }}" />
-
-Figure: Ash Creek detection visualized in Cesium (2 altitudes) <br />
+<embed src="{{ "/assets/files/rasr.pdf" | prepend: site.baseurl }}" width="800px" height="2100px" />
 
 <center>
