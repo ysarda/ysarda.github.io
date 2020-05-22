@@ -4,11 +4,9 @@ title: "Spices and Rice"
 permalink: /spice/
 ---
 
-<center>
-
 # Spices and Rice
 
-Spices and rice 
+Spices and rice
 
 are no causality.
 
@@ -38,8 +36,6 @@ Meet the merchant that dreams of gardens
 
 and his orangutan that doesn't pay attention
 
-to you, but eats your food. You’re my cook, my driver, 
+to you, but eats your food. You’re my cook, my driver,
 
 and my ego: “Persistence. I love your cooking.”
-
-</center>
