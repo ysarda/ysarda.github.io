@@ -3,19 +3,20 @@ layout: project
 title: "Spices and Rice"
 permalink: /spice/
 ---
+<center>
 
-# Spices and Rice
-
+<h1> Spices and Rice </h1>
+</br>
 Spices and rice
-
+</br>
 are no causality.
-
+</br>
 Vitality of a human being blooms
-
+</br>
 when you drank rain in the garden.
-
+</br>
 “There is no solace in hunger, only fires.”
-
+</br>
 Herald the annual pleasure
 
 where new life begins,
@@ -39,3 +40,5 @@ and his orangutan that doesn't pay attention
 to you, but eats your food. You’re my cook, my driver,
 
 and my ego: “Persistence. I love your cooking.”
+
+</center>
