@@ -13,7 +13,7 @@ PI: Dr. Moriba Jah
 
 Graduate Students: Benjamin Miller
 
-Undergraduate Students: Robby Keh, Yash Sarda, Rodrigo Ugalde (Graduated), James Perlichek (Graduated) 
+Undergraduate Students: Robby Keh, Yash Sarda, Rodrigo Ugalde (Graduated), James Perlichek (Graduated)
 
 
 
@@ -22,4 +22,4 @@ Undergraduate Students: Robby Keh, Yash Sarda, Rodrigo Ugalde (Graduated), James
 
 
 
-<embed src="https://ysarda.github.io/assets/files/RASR.pdf" width="800px" height="1500px" />
+[Initial concept paper](https://ysarda.github.io/assets/files/RASR.pdf)
