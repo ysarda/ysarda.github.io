@@ -28,7 +28,7 @@ according to that cooking book,
 
 “Boil me some more.
 
-Some more,” she says, with swordlike skimming spoon.
+Some more,” she says, with sword-like skimming spoon.
 
 I can stir corn by myself.
 
