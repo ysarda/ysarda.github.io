@@ -6,6 +6,7 @@ permalink: /spice/
 <center>
 
 <h1> Spices and Rice </h1>
+<p>
 </br>
 Spices and rice
 </br>
@@ -40,5 +41,5 @@ and his orangutan that doesn't pay attention
 to you, but eats your food. You’re my cook, my driver,
 
 and my ego: “Persistence. I love your cooking.”
-
+</p>
 </center>
