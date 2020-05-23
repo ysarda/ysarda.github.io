@@ -7,26 +7,19 @@ permalink: /razr/
 ### Based on the principle of high-level information fusion, RASR takes NOAA Doppler Weather data, and re-purposes it for meteor and entering object detection and trajectory analysis
 
 
-RASR is an open source project based at The University of Texas at Austin, building on <a href="http://astria.tacc.utexas.edu/AstriaGraph/">ASTRIAGraph</a>. With almost complete coverage of the continental United States with NEXRAD sites, it seeks to detect the velocity signatures of entering objects using computer vision, specifically the Matplotlib and OpenCV Python libraries.
-<br />
-<br />
+RASR is an open source project based at The University of Texas at Austin, building on [ASTRIAGraph](http://astria.tacc.utexas.edu/AstriaGraph/). With almost complete coverage of the continental United States with NEXRAD sites, it seeks to detect the velocity signatures of entering objects using computer vision and trained machine learning models, specifically the  OpenCV Python library and TensorFlow.
 
 PI: Dr. Moriba Jah
-<br />
-Graduate Students: Benjamin Miller
-<br />
-Undergraduate Students: Rodrigo Ugalde (Graduated), Robby Keh, James Perlichek (Graduated), Yash Sarda
-<br />
 
-<br />
-</p>
+Graduate Students: Benjamin Miller
+
+Undergraduate Students: Robby Keh, Yash Sarda, Rodrigo Ugalde (Graduated), James Perlichek (Graduated) 
+
+
 
 <div class="github-card" data-github="bgmiller100/rasr" data-width="400" data-height="" data-theme="default"></div>
 <script src="//cdn.jsdelivr.net/github-cards/latest/widget.js"></script>
 
-<br />
-<br />
+
 
 <embed src="https://ysarda.github.io/assets/files/RASR.pdf" width="800px" height="1500px" />
-
-<center>
