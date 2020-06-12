@@ -5,50 +5,8 @@ permalink: /photos/
 ---
 
 <body>
-	<!-- Page Preloder -->
-	<div id="preloder">
-		<div class="loader"></div>
-	</div>
-
-	<!-- Header section  -->
-	<header class="header-section hs-bd">
-		<a href="index.html" class="site-logo"><img src="img/logo.png" alt="logo"></a>
-		<div class="header-controls">
-			<button class="nav-switch-btn"><i class="fa fa-bars"></i></button>
-			<button class="search-btn"><i class="fa fa-search"></i></button>
-		</div>
-		<ul class="main-menu">
-			<li><a href="index.html">Home</a></li>
-			<li><a href="about.html">About the Artist </a></li>
-			<li>
-				<a href="#">Portfolio</a>
-				<ul class="sub-menu">
-					<li><a href="portfolio.html">Portfolio 1</a></li>
-					<li><a href="portfolio-1.html">Portfolio 2</a></li>
-					<li><a href="portfolio-2.html">Portfolio 3</a></li>
-				</ul>
-			</li>
-			<li><a href="blog.html">Blog</a></li>
-			<li><a href="elements.html">Elements</a></li>
-			<li><a href="contact.html">Contact</a></li>
-			<li class="search-mobile">
-				<button class="search-btn"><i class="fa fa-search"></i></button>
-			</li>
-		</ul>
-	</header>
-	<div class="clearfix"></div>
-	<!-- Header section end  -->
-
 	<!-- Portfolio section  -->
 	<div class="portfolio-2-section">
-		<ul class="portfolio-filter pf-2 controls">
-			<li class="control" data-filter="all">All</li>
-			<li class="control" data-filter=".nature">Nature</li>
-			<li class="control" data-filter=".studio">Studio Photography</li>
-			<li class="control" data-filter=".weddings">Weddings</li>
-			<li class="control" data-filter=".lifestyle">Lifestyle</li>
-			<li class="control" data-filter=".fashion">Fashion</li>
-		</ul>
 		<div class="portfolio-warp">
 			<div class="row portfolio-gallery m-0">
 				<div class="mix col-lg-4 col-sm-6 p-0 nature">
