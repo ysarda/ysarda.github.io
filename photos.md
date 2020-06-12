@@ -11,63 +11,63 @@ permalink: /photos/
 			<div class="row portfolio-gallery m-0">
 				<div class="mix col-lg-4 col-sm-6 p-0 nature">
 					<div class="portfolio-box">
-						<div class="portfolio-item set-bg" data-setbg="img/portfolio/1.jpg"></div>
+						<div class="portfolio-item set-bg" data-setbg="assets/img/portfolio/1.jpg"></div>
 						<h6>Shadow in the water</h6>
 						<p>2019</p>
 					</div>
 				</div>
 				<div class="mix col-lg-4 col-sm-6 p-0 studio">
 					<div class="portfolio-box">
-						<div class="portfolio-item set-bg" data-setbg="img/portfolio/2.jpg"></div>
+						<div class="portfolio-item set-bg" data-setbg="assets/img/portfolio/2.jpg"></div>
 						<h6>Winter in the Mountains</h6>
 						<p>2019</p>
 					</div>
 				</div>
 				<div class="mix col-lg-4 col-sm-6 p-0 weddings">
 					<div class="portfolio-box">
-						<div class="portfolio-item set-bg" data-setbg="img/portfolio/3.jpg"></div>
+						<div class="portfolio-item set-bg" data-setbg="assets/img/portfolio/3.jpg"></div>
 						<h6>Pink Flamingo</h6>
 						<p>2019</p>
 					</div>
 				</div>
 				<div class="mix col-lg-4 col-sm-6 p-0 lifestyle">
 					<div class="portfolio-box">
-						<div class="portfolio-item set-bg" data-setbg="img/portfolio/6.jpg"></div>
+						<div class="portfolio-item set-bg" data-setbg="assets/img/portfolio/6.jpg"></div>
 						<h6>Shadow in the water</h6>
 						<p>2019</p>
 					</div>
 				</div>
 				<div class="mix col-lg-4 col-sm-6 p-0 fashion">
 					<div class="portfolio-box">
-						<div class="portfolio-item set-bg" data-setbg="img/portfolio/4.jpg"></div>
+						<div class="portfolio-item set-bg" data-setbg="assets/img/portfolio/4.jpg"></div>
 						<h6>Winter in the Mountains</h6>
 						<p>2019</p>
 					</div>
 				</div>
 				<div class="mix col-lg-4 col-sm-6 p-0 nature">
 					<div class="portfolio-box">
-						<div class="portfolio-item set-bg" data-setbg="img/portfolio/5.jpg"></div>
+						<div class="portfolio-item set-bg" data-setbg="assets/img/portfolio/5.jpg"></div>
 						<h6>Pink Flamingo</h6>
 						<p>2019</p>
 					</div>
 				</div>
 				<div class="mix col-lg-4 col-sm-6 p-0 studio">
 					<div class="portfolio-box">
-						<div class="portfolio-item set-bg" data-setbg="img/portfolio/8.jpg"></div>
+						<div class="portfolio-item set-bg" data-setbg="assets/img/portfolio/8.jpg"></div>
 						<h6>Shadow in the water</h6>
 						<p>2019</p>
 					</div>
 				</div>
 				<div class="mix col-lg-4 col-sm-6 p-0 weddings">
 					<div class="portfolio-box">
-						<div class="portfolio-item set-bg" data-setbg="img/portfolio/10.jpg"></div>
+						<div class="portfolio-item set-bg" data-setbg="assets/img/portfolio/10.jpg"></div>
 						<h6>Winter in the Mountains</h6>
 						<p>2019</p>
 					</div>
 				</div>
 				<div class="mix col-lg-4 col-sm-6 p-0 lifestyle">
 					<div class="portfolio-box">
-						<div class="portfolio-item set-bg" data-setbg="img/portfolio/13.jpg"></div>
+						<div class="portfolio-item set-bg" data-setbg="assets/img/portfolio/13.jpg"></div>
 						<h6>Pink Flamingo</h6>
 						<p>2019</p>
 					</div>
@@ -83,17 +83,6 @@ permalink: /photos/
 	<!-- Footer section   -->
 	<footer class="footer-section">
 		<div class="container-fluid">
-			<div class="row">
-				<div class="col-md-6 order-1 order-md-2">
-					<div class="footer-social-links">
-						<a href=""><i class="fa fa-pinterest"></i></a>
-						<a href=""><i class="fa fa-facebook"></i></a>
-						<a href=""><i class="fa fa-twitter"></i></a>
-						<a href=""><i class="fa fa-dribbble"></i></a>
-						<a href=""><i class="fa fa-behance"></i></a>
-					</div>
-				</div>
-				<div class="col-md-6 order-2 order-md-1">
 					<div class="copyright"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
