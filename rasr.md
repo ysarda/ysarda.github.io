@@ -1,7 +1,7 @@
 ---
 layout: project
-title: "RAZR"
-permalink: /razr/
+title: "RASR"
+permalink: /rasr/
 ---
 # RASR
 ### Based on the principle of high-level information fusion, RASR takes NOAA Doppler Weather data, and re-purposes it for meteor and entering object detection and trajectory analysis
@@ -22,5 +22,8 @@ Undergraduate Students: Robby Keh, Yash Sarda, Rodrigo Ugalde (Graduated), James
 <script src="//cdn.jsdelivr.net/github-cards/latest/widget.js"></script>
 
 
+[Recent Presentation](https://ysarda.github.io/assets/files/present.pdf)
 
 [Initial concept paper](https://ysarda.github.io/assets/files/RASR.pdf)
+
+[Proof of Concept Paper by Dr. Marc Fries](https://onlinelibrary.wiley.com/doi/full/10.1111/j.1945-5100.2010.01115.x)
