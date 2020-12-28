@@ -7,7 +7,13 @@ permalink: /rasr/
 ### Based on the principle of high-level information fusion, RASR takes NOAA Doppler Weather data, and re-purposes it for meteor and entering object detection and trajectory analysis
 
 
-RASR is an open source project based at The University of Texas at Austin, building on [ASTRIAGraph](http://astria.tacc.utexas.edu/AstriaGraph/). With almost complete coverage of the continental United States with NEXRAD sites, it seeks to detect the velocity signatures of entering objects using computer vision and trained machine learning models, specifically the  OpenCV Python library and TensorFlow.
+This algorithm searches the NOAA NEXRAD Level II Doppler Radar archive for phenomena indicating meteoroid falls.  For a given set of dates, archive files from across all available radar sites are retrieved \[1] and unwrapped using the Python ARM Radar Toolkit by \[2].  Latitude/longitude/altitude data is returned for all detections.  The original problem was motivated by \[3], and was developed using the [ARES](https://ares.jsc.nasa.gov/meteorite-falls/) database.  The current algorithm uses a PyTorch convolutional neural network object detection algorithm to identify fall velocity signatures, based on the Detecto framework. Tested on Ubuntu 20.04 locally.
+
+> \[1] Staniewicz, S., Keh, R. (2018). Maual_Input_Scraper.py. The University of Texas at Austin
+>
+> \[2] Helmus, J.J. & Collis, S.M., (2016). The Python ARM Radar Toolkit (Py-ART), a Library for Working with Weather Radar Data in the Python Programming Language. Journal of Open Research Software. 4(1), p.e25. DOI: http://doi.org/10.5334/jors.119
+>
+> \[3] Fries, M. & Fries, J., (2010). [Doppler Weather Radar as a Meteorite Recovery Tool](https://onlinelibrary.wiley.com/doi/full/10.1111/j.1945-5100.2010.01115.x) Meteoritics & Planetary Sciences 45, Nr. 9, 1476-1487. DOI: 10.1111/j.1945-5100.2010.01115.x
 
 PI: Dr. Moriba Jah
 
@@ -18,12 +24,10 @@ Undergraduate Students: Robby Keh, Yash Sarda, Rodrigo Ugalde (Graduated), James
 
 ### Github Repository:
 
-<div class="github-card" data-github="bgmiller100/rasr" data-width="400" data-height="" data-theme="default"></div>
+<div class="github-card" data-github="ysarda/RASR" data-width="400" data-height="" data-theme="default"></div>
 <script src="//cdn.jsdelivr.net/github-cards/latest/widget.js"></script>
 
 
 [Recent Presentation](https://ysarda.github.io/assets/files/present.pdf)
 
 [Initial concept paper](https://ysarda.github.io/assets/files/RASR.pdf)
-
-[Proof of Concept Paper by Dr. Marc Fries](https://onlinelibrary.wiley.com/doi/full/10.1111/j.1945-5100.2010.01115.x)
