@@ -32,25 +32,12 @@ Undergraduate Students: Robby Keh, Yash Sarda, Rodrigo Ugalde (Graduated), James
 
 [Initial concept paper](https://ysarda.github.io/assets/files/RASR.pdf)
 
-// The URL on your server where CesiumJS's static files are hosted.
-window.CESIUM_BASE_URL = '/';
 
-import * as Cesium from 'cesium';
-import "cesium/Build/Cesium/Widgets/widgets.css";
-
-// Your access token can be found at: https://cesium.com/ion/tokens.
-Cesium.Ion.defaultAccessToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI2OGFhYTBjNy04NDEyLTRlYjktYTMyYS01NGZiMTk1NDEwMTUiLCJpZCI6MjgwMSwiaWF0IjoxNTM0Njk0OTc2fQ.RR9ApuF8GTqwVxO6hcKvzKVwu-EVIpzysxzdPjtqOOo';
-// Initialize the Cesium Viewer in the HTML element with the "cesiumContainer" ID.
-const viewer = new Cesium.Viewer('cesiumContainer', {
-  terrainProvider: Cesium.createWorldTerrain()
-});    
-// Add Cesium OSM Buildings, a global 3D buildings layer.
-const buildingTileset = viewer.scene.primitives.add(Cesium.createOsmBuildings());   
-// Fly the camera to San Francisco at the given longitude, latitude, and height.
-viewer.camera.flyTo({
-  destination : Cesium.Cartesian3.fromDegrees(-122.4175, 37.655, 400),
-  orientation : {
-    heading : Cesium.Math.toRadians(0.0),
-    pitch : Cesium.Math.toRadians(-15.0),
-  }
-});
+<div class="glitch-embed-wrap" style="height: 420px; width: 100%;">
+  <iframe
+    src="https://glitch.com/embed/#!/embed/brassy-hallowed-bill?path=index.html&previewSize=0"
+    title="brassy-hallowed-bill on Glitch"
+    allow="geolocation; microphone; camera; midi; vr; encrypted-media"
+    style="height: 100%; width: 100%; border: 0;">
+  </iframe>
+</div>
