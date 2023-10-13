@@ -1,0 +1,22 @@
+# Site settings
+title: Portfolio and Blog
+description:
+#baseurl: "/blog" # the subpath of your site, e.g. /blog
+#url: "ysarda.github.io" # the base hostname & protocol for your site e.g. http://willianjusten.com.br
+
+# User settings
+username: Yash Sarda
+user_description_theory:  Multi-Disciplinary Optimization. Physics-Based Machine Learning. Computational Fluid Dynamics. Simulation and Modeling. Sleep.
+user_description_applied:  Autonomous Systems and Digital Twins. VTOL Aircraft. Hypersonic Vehicles. Martial Arts. Eating.
+user_title: excuse the mess, it's a work in progress
+email: ysarda9@gmail.com
+twitter_username: xysarda
+github_username:  ysarda
+#gplus_username:  lorem_ipsum
+
+
+# Google-analytics
+google-analytics:
+  id: ""
+
+exclude: ['package.json', 'src' , 'node_modules']

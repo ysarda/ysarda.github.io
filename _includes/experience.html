@@ -1,0 +1,191 @@
+<head>
+    <style type="text/css">
+        .p {
+            size: 10;
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+            box-sizing: border-box;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background-color: rgb(41, 32, 61);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+            box-sizing: border-box;
+        }
+
+        .container {
+            padding: 10px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+            box-sizing: border-box;
+            border: 4px solid white;
+        }
+
+        .container::after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            right: -13px;
+            background-color: white;
+            border: 4px solid #3c334e;
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+            box-sizing: border-box;
+        }
+
+        .one {
+            left: 0;
+            box-sizing: border-box;
+            background-color: rgb(54, 38, 82);
+        }
+
+        .two {
+            left: 50%;
+            box-sizing: border-box;
+            background-color: rgb(52, 52, 97);
+        }
+
+        .one::before {
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 22px;
+            width: 0;
+            z-index: 1;
+            right: 30px;
+            border: medium solid rgb(54, 38, 82);
+            border-width: 10px 0 10px 10px;
+            border-color: transparent transparent transparent rgb(54, 38, 82);
+            box-sizing: border-box;
+        }
+
+        .two::before {
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 22px;
+            width: 0;
+            z-index: 1;
+            left: 30px;
+            border: medium solid rgb(52, 52, 97);
+            border-width: 10px 10px 10px 1px;
+            border-color: transparent rgb(52, 52, 97) transparent transparent;
+            box-sizing: border-box;
+        }
+
+        .two::after {
+            left: -13px;
+            box-sizing: border-box;
+        }
+
+        .content {
+            padding: 20px 30px;
+            color: white;
+            position: relative;
+            border-radius: 6px;
+            box-sizing: border-box;
+        }
+
+        @media screen and (max-width: 600px) {
+            .timeline::after {
+                left: 31px;
+                box-sizing: border-box;
+            }
+
+            .container {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+                box-sizing: border-box;
+            }
+
+            .container::before {
+                left: 60px;
+                border: medium solid white;
+                border-width: 10px 10px 10px 0;
+                box-sizing: border-box;
+            }
+
+            .one::before {
+                border-color: transparent rgb(54, 38, 82) transparent transparent;
+            }
+
+            .two::before {
+                border-color: transparent rgb(52, 52, 97) transparent transparent;
+            }
+
+            .one::after,
+            .two::after {
+                left: 15px;
+                box-sizing: border-box;
+            }
+
+            .two {
+                left: 0%;
+                box-sizing: border-box;
+            }
+        }
+    </style>
+</head>
+<div class="user-details">
+    <h1> Experience </h1>
+</div>
+
+<body>
+    <div class="timeline">
+        <div class="container one">
+            <div class="content">
+                <p>June 2023</p>
+                <p>Software Engineer</p>
+                <p>Portalis AI</p>
+            </div>
+        </div>
+        <div class="container one">
+            <div class="content">
+                <p>March 2021</p>
+                <p>Machine Learning Engineer II</p>
+                <p>Shield AI</p>
+            </div>
+        </div>
+        <div class="container two">
+            <div class="content">
+                <p>December 2020</p>
+                <p>Graduated from the University of Texas at Austin</p>
+                <p>BS Aerospace Engineering + Computational Science Certificate</p>
+            </div>
+        </div>
+        <div class="container one">
+            <div class="content">
+                <p>August 2020</p>
+                <p>Advanced Air Mobility Intern</p>
+                <p>NASA Langley Research Center</p>
+            </div>
+        </div>
+        <div class="container one">
+            <div class="content">
+                <p>May 2019</p>
+                <p>Additive Manufacturing Intern</p>
+                <p>MIT Lincoln Laboratory</p>
+            </div>
+        </div>
+        <div class="container two">
+            <div class="content">
+                <p>May 2017</p>
+                <p>Graduated from the Liberal Arts and Science Academy</p>
+            </div>
+        </div>
+    </div>
+</body>
