@@ -16,6 +16,10 @@
     max-width: 100%;
     height: auto;
     border-radius: 5px;
+    border: solid 10px transparent;
+  }
+  img:hover {
+    border-color: white;
   }
   h5 {
     margin: 0;
