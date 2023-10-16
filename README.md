@@ -1,1 +1,1 @@
-Github Repository for my website.
+github repository for my website.
