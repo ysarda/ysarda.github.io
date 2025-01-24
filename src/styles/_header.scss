@@ -58,6 +58,14 @@
     text-decoration: none;
     font-size: 15px;
     margin: 10px;
+    &:hover {
+      color: $main;
+      background: #FFF;
+    }
+    &:active {
+      color: $main;
+      background: #FFF;
+    }
     @media only screen and (min-width:$cut){
       font-size: 20px;
     }
