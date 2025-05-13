@@ -1,62 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <style type="text/css">
-    .contents-right{
-      margin-top: -10px;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Showcase</title>
+  <style>
+    body {
+      background-color: #121212;
+      color: white;
+      font-family: Arial, sans-serif;
     }
-    .user-projects{
-      transition: all .7s;
-      text-decoration: none;
-      color: inherit;
-    }
-    .user-projects:hover{
+    .project {
+      margin: 20px;
+      padding: 15px;
+      border-radius: 8px;
+      transition: all 0.3s ease;
       background-color: rgba(255, 255, 255, 0.1);
+      overflow: hidden;
+    }
+    .project:hover {
+      transform: scale(1.05);
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+    .project-details {
+      max-height: 0;
+      opacity: 0;
+      transition: max-height 0.3s ease, opacity 0.3s ease;
+    }
+    .project:hover .project-details {
+      max-height: 300px;
+      opacity: 1;
+    }
+    .project img {
+      max-width: 100%;
+      border-radius: 8px;
+    }
+    .link-button {
+      margin-top: 10px;
+      padding: 8px 12px;
+      background-color: #007BFF;
+      border: none;
+      color: white;
+      border-radius: 4px;
       text-decoration: none;
-    }
-    .user-projects:visited {
-      color: inherit;
-    }
-    @media screen and (max-width: 600px) {
-      .user-projects{
-        width: 100%;
-      }
-      .contents-right {
-          width: 100%;
-          padding-left: 10px;
-          padding-right: 10px;
-          box-sizing: border-box;
-      }
     }
   </style>
 </head>
-<div class="user-details">
-  <h1 style="color: white;"> Work Projects </h1>
-</div>
-<a href="https://portalis.ai/" class="user-projects">
-    <div class="images-left">
-      <img alt="portalis" src="{{ "/assets/img/portalis.png" | prepend: site.baseurl }}" />
+<body>
+  <h1>My Projects</h1>
+  <div class="project">
+    <h3>Portalis</h3>
+    <div class="project-details">
+      <p>Speech to speech AI avatars, capable of memory, lookups, and document access.</p>
+      <img src="/assets/img/portalis.png" alt="Portalis">
+      <a href="https://portalis.ai/" class="link-button">Learn More</a>
     </div>
-  <div class="contents-right">
-    <h3 style="color: white;"> Portalis </h3>
-    <ul>
-      <li style="color: white;"> Large Language Models </li>
-      <li style="color: white;"> Server Engineering </li>
-    </ul>
-    <p style="color: white;"> Speech to speech AI avatars, capable of memory, lookups, and document access. </p>
   </div>
-</a>
-<a href="https://www.darpa.mil/program/gamebreaker" class="user-projects">
-  <div class="images-left">
-    <img alt="starcraft" src="{{ "/assets/img/starcraft.jpg" | prepend: site.baseurl }}" />
+  <div class="project">
+    <h3>Gamebreaker</h3>
+    <div class="project-details">
+      <p>Battlefield evaluation, prediction, and composition optimization for Starcraft 2.</p>
+      <img src="/assets/img/starcraft.jpg" alt="Gamebreaker">
+      <a href="https://www.darpa.mil/program/gamebreaker" class="link-button">Learn More</a>
+    </div>
   </div>
-  <div class="contents-right">
-    <h3 style="color: white;"> Gamebreaker </h3>
-    <ul>
-      <li style="color: white;"> Deep Learning </li>
-      <li style="color: white;"> Optimization </li>
-    </ul>
-    <p style="color: white;"> Battlefield evaluation, prediction, and composition optimization for Starcraft 2 and the Next Generation Threat System. </p>
-  </div>
-</a>
+</body>
+</html>
+
 <!-- <div class="user-details">
   <h1 style="color: white;"> Personal Projects </h1>
 </div>
