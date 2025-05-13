@@ -1,96 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <style type="text/css">
-    .contents-right {
-      margin-top: -10px;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Cards</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #121212;
+      color: white;
+      margin: 0;
+      padding: 20px;
     }
-    .user-projects {
-      transition: all .3s ease;
-      text-decoration: none;
-      color: inherit;
-      display: block;
-      padding: 10px;
-      cursor: pointer;
-      overflow: hidden;
-    }
-    .user-projects:hover {
-      background-color: rgba(255, 255, 255, 0.1);
-      text-decoration: none;
-    }
-    .user-projects:visited {
-      color: inherit;
-    }
-    .expanded .user-projects {
-      height: 1000px;
-      padding: 15px;
-      background-color: rgba(255, 255, 255, 0.1);
-      width: 100%;
-      display: block;
+    
+    .container {
+      max-width: 900px;
       margin: 0 auto;
     }
-    .link-button {
-      margin-top: 10px;
-      padding: 8px 12px;
-      background-color: rgba(255, 255, 255, 0.5);
-      border: none;
-      color: white;
-      border-radius: 4px;
-      text-decoration: none;
+    
+    .project-card {
+      margin-bottom: 20px;
+      border-radius: 8px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+    
+    .project-card:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+    
+    /* Non-expanded state */
+    .project-content {
+      display: flex;
+      padding: 16px;
+    }
+    
+    .project-image {
+      width: 35%;
+      margin-right: 20px;
+    }
+    
+    .project-image img {
+      width: 100%;
+      border-radius: 6px;
+      object-fit: cover;
+    }
+    
+    .project-details {
+      width: 65%;
+    }
+    
+    .project-title {
+      margin-top: 0;
+      margin-bottom: 12px;
+      font-size: 1.5rem;
+    }
+    
+    .project-skills {
+      padding-left: 20px;
+      margin-bottom: 12px;
+    }
+    
+    .project-skills li {
+      margin-bottom: 4px;
+    }
+    
+    .project-description {
+      margin-bottom: 0;
+      line-height: 1.5;
+    }
+    
+    .project-link {
       display: none;
-      transition: opacity 0.3s ease;
+      margin-top: 16px;
+      padding: 8px 16px;
+      background-color: #3182ce;
+      color: white;
+      text-decoration: none;
+      border-radius: 4px;
+      text-align: center;
+      transition: background-color 0.2s ease;
     }
-    .expanded .link-button {
+    
+    .project-link:hover {
+      background-color: #2c5282;
+    }
+    
+    /* Expanded state */
+    .project-card.expanded {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+    
+    .project-card.expanded .project-content {
+      flex-direction: column;
+      align-items: center;
+      padding: 24px;
+    }
+    
+    .project-card.expanded .project-image {
+      width: 100%;
+      margin-right: 0;
+      margin-bottom: 20px;
+    }
+    
+    .project-card.expanded .project-details {
+      width: 100%;
+      text-align: center;
+    }
+    
+    .project-card.expanded .project-skills {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding-left: 0;
+      list-style-type: none;
+    }
+    
+    .project-card.expanded .project-skills li {
+      margin: 0 8px 8px 0;
+      background-color: rgba(255, 255, 255, 0.15);
+      padding: 4px 12px;
+      border-radius: 16px;
+      font-size: 0.9rem;
+    }
+    
+    .project-card.expanded .project-link {
       display: inline-block;
-      opacity: 0.8;
     }
+    
     @media screen and (max-width: 600px) {
-      .user-projects {
+      .project-content {
+        flex-direction: column;
+      }
+      
+      .project-image, .project-details {
         width: 100%;
       }
-      .contents-right {
-        width: 100%;
-        padding-left: 5px;
-        padding-right: 5px;
-        box-sizing: border-box;
+      
+      .project-image {
+        margin-right: 0;
+        margin-bottom: 16px;
       }
     }
   </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Work Projects</h1>
+    
+    <div class="project-card" onclick="toggleExpand(this)">
+      <div class="project-content">
+        <div class="project-image">
+          <img src="/api/placeholder/400/300" alt="Portalis">
+        </div>
+        <div class="project-details">
+          <h3 class="project-title">Portalis</h3>
+          <ul class="project-skills">
+            <li>Large Language Models</li>
+            <li>Server Engineering</li>
+          </ul>
+          <p class="project-description">Speech to speech AI avatars, capable of memory, lookups, and document access.</p>
+          <a href="https://portalis.ai/" class="project-link" onclick="event.stopPropagation()">Learn More</a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="project-card" onclick="toggleExpand(this)">
+      <div class="project-content">
+        <div class="project-image">
+          <img src="/api/placeholder/400/300" alt="Gamebreaker">
+        </div>
+        <div class="project-details">
+          <h3 class="project-title">Gamebreaker</h3>
+          <ul class="project-skills">
+            <li>Deep Learning</li>
+            <li>Optimization</li>
+          </ul>
+          <p class="project-description">Battlefield evaluation, prediction, and composition optimization for Starcraft 2 and the Next Generation Threat System.</p>
+          <a href="https://www.darpa.mil/program/gamebreaker" class="project-link" onclick="event.stopPropagation()">Learn More</a>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Uncomment and update as needed
+    <div class="project-card" onclick="toggleExpand(this)">
+      <div class="project-content">
+        <div class="project-image">
+          <img src="/api/placeholder/400/300" alt="MineZero">
+        </div>
+        <div class="project-details">
+          <h3 class="project-title">MineZero</h3>
+          <ul class="project-skills">
+            <li>Deep Reinforcement Learning</li>
+            <li>Human-Agent Teaming</li>
+          </ul>
+          <p class="project-description">Exploring Minecraft as an open-world simulator for RL agents, with various objectives like collection, survival, and architecture.</p>
+          <a href="https://github.com/ysarda/minezero" class="project-link" onclick="event.stopPropagation()">Learn More</a>
+        </div>
+      </div>
+    </div>
+    -->
+    
+  </div>
+
   <script>
     function toggleExpand(element) {
       element.classList.toggle('expanded');
     }
   </script>
-</head>
-<div class="user-details">
-  <h1 style="color: white;"> Work Projects </h1>
-</div>
-<div class="user-projects" onclick="toggleExpand(this)">
-  <div class="images-left">
-    <img alt="portalis" src="{{ "/assets/img/portalis.png" | prepend: site.baseurl }}" />
-  </div>
-  <div class="contents-right">
-    <h3 style="color: white;"> Portalis AI</h3>
-    <ul>
-      <li style="color: white;"> Large Language Models </li>
-      <li style="color: white;"> Server Engineering </li>
-    </ul>
-    <p style="color: white;"> Speech to speech AI avatars, capable of memory, lookups, and document access. </p>
-    <a href="https://portalis.ai/" class="link-button">Learn More</a>
-  </div>
-</div>
-<div class="user-projects" onclick="toggleExpand(this)">
-  <div class="images-left">
-    <img alt="starcraft" src="{{ "/assets/img/starcraft.jpg" | prepend: site.baseurl }}" />
-  </div>
-  <div class="contents-right">
-    <h3 style="color: white;"> Gamebreaker </h3>
-    <ul>
-      <li style="color: white;"> Deep Learning </li>
-      <li style="color: white;"> Optimization </li>
-    </ul>
-    <p style="color: white;"> Battlefield evaluation, prediction, and composition optimization for Starcraft 2 and the Next Generation Threat System. </p>
-    <a href="https://www.darpa.mil/program/gamebreaker" class="link-button">Learn More</a>
-  </div>
-</div>
+</body>
+</html>
 
 <!-- <div class="user-details">
   <h1 style="color: white;"> Personal Projects </h1>
