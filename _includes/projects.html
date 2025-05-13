@@ -9,6 +9,7 @@
       color: inherit;
       display: block;
       position: relative;
+      cursor: pointer;
     }
     .user-projects:hover {
       background-color: rgba(255, 255, 255, 0.1);
@@ -20,6 +21,9 @@
     .images-left img {
       width: 100%;
       height: auto;
+      transition: all .7s;
+    }
+    .contents-right {
       transition: all .7s;
     }
     .learn-more {
@@ -37,6 +41,9 @@
     }
     .user-projects.expanded .images-left img {
       width: 100%;
+    }
+    .user-projects.expanded .contents-right {
+      margin-top: 10px;
     }
     .user-projects.expanded .learn-more {
       display: block;
@@ -58,7 +65,7 @@
 <div class="user-details">
   <h1 style="color: white;"> Work Projects </h1>
 </div>
-<a href="https://portalis.ai/" class="user-projects">
+<div class="user-projects" data-url="https://portalis.ai/">
   <div class="images-left">
     <img alt="portalis" src="{{ "/assets/img/portalis.png" | prepend: site.baseurl }}" />
   </div>
@@ -71,8 +78,8 @@
     <p style="color: white;"> Speech to speech AI avatars, capable of memory, lookups, and document access. </p>
     <a href="https://portalis.ai/" class="learn-more">Learn More</a>
   </div>
-</a>
-<a href="https://www.darpa.mil/program/gamebreaker" class="user-projects">
+</div>
+<div class="user-projects" data-url="https://www.darpa.mil/program/gamebreaker">
   <div class="images-left">
     <img alt="starcraft" src="{{ "/assets/img/starcraft.jpg" | prepend: site.baseurl }}" />
   </div>
@@ -85,12 +92,15 @@
     <p style="color: white;"> Battlefield evaluation, prediction, and composition optimization for Starcraft 2 and the Next Generation Threat System. </p>
     <a href="https://www.darpa.mil/program/gamebreaker" class="learn-more">Learn More</a>
   </div>
-</a>
+</div>
 <script>
   document.querySelectorAll('.user-projects').forEach(card => {
     card.addEventListener('click', (e) => {
-      e.preventDefault(); // Prevent default link behavior
-      card.classList.toggle('expanded');
+      // Only toggle if the click is not on the Learn More link
+      if (!e.target.classList.contains('learn-more')) {
+        e.preventDefault();
+        card.classList.toggle('expanded');
+      }
     });
   });
 </script>
