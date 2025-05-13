@@ -10,6 +10,7 @@
       display: block;
       padding: 10px;
       cursor: pointer;
+      overflow: hidden;
     }
     .user-projects:hover {
       background-color: rgba(255, 255, 255, 0.1);
@@ -19,19 +20,29 @@
       color: inherit;
     }
     .expanded {
-      max-height: 300px;
+      height: 300%;
       padding: 15px;
       background-color: rgba(255, 255, 255, 0.2);
+    }
+    .expanded .images-left img {
+      width: 100%;
+      display: block;
+      margin: 0 auto;
     }
     .link-button {
       margin-top: 10px;
       padding: 8px 12px;
-      background-color: #007BFF;
+      background-color: rgba(255, 255, 255, 0.5);
       border: none;
       color: white;
       border-radius: 4px;
       text-decoration: none;
+      display: none;
+      transition: opacity 0.3s ease;
+    }
+    .expanded .link-button {
       display: inline-block;
+      opacity: 0.8;
     }
     @media screen and (max-width: 600px) {
       .user-projects {
@@ -82,7 +93,6 @@
     <a href="https://www.darpa.mil/program/gamebreaker" class="link-button">Learn More</a>
   </div>
 </div>
-
 
 <!-- <div class="user-details">
   <h1 style="color: white;"> Personal Projects </h1>
