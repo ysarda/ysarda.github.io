@@ -1,129 +1,50 @@
-<!DOCTYPE html>
-<html>
 <head>
   <style type="text/css">
-    .contents-right {
+    .contents-right{
       margin-top: -10px;
-      transition: all 0.7s ease-in-out;
-      opacity: 1; /* Adding opacity property for fade effect */
     }
-
-    .user-projects {
-      transition: all 0.7s ease-in-out;
+    .user-projects{
+      transition: all .7s;
       text-decoration: none;
       color: inherit;
-      display: block;
-      position: relative;
-      cursor: pointer;
-      padding-bottom: 0; /* Default value */
     }
-
-    .user-projects:hover {
+    .user-projects:hover{
       background-color: rgba(255, 255, 255, 0.1);
       text-decoration: none;
     }
-
     .user-projects:visited {
       color: inherit;
     }
-
-    .images-left {
-      transition: all 0.7s ease-in-out;
-      margin-bottom: 0; /* Default value */
-    }
-
-    .images-left img {
-      width: 100%;
-      height: auto;
-      transition: all 0.7s ease-in-out;
-    }
-
-    .learn-more {
-      display: none;
-      color: white;
-      text-decoration: underline;
-      margin-top: 10px;
-      transition: all 0.7s ease-in-out;
-    }
-    
-    /* New section for the additional text */
-    .additional-text {
-      color: white;
-      margin-top: 15px;
-      opacity: 0;
-      height: 0;
-      overflow: hidden;
-      transition: opacity 0.7s ease-in-out;
-    }
-
-    .user-projects.expanded {
-      padding-bottom: 20px;
-    }
-
-    .user-projects.expanded .images-left {
-      width: 100%;
-      margin-bottom: 10px;
-    }
-
-    .user-projects.expanded .images-left img {
-      width: 100%;
-    }
-
-    .user-projects.expanded .contents-right {
-      opacity: 0; /* Fade out the contents-right when expanded */
-      height: 0;
-      overflow: hidden;
-      margin: 0;
-      padding: 0;
-    }
-
-    .user-projects.expanded .learn-more {
-      display: block;
-    }
-    
-    .user-projects.expanded .additional-text {
-      opacity: 1;
-      height: auto;
-    }
-
     @media screen and (max-width: 600px) {
-      .user-projects {
+      .user-projects{
         width: 100%;
       }
       .contents-right {
-        width: 100%;
-        padding-left: 10px;
-        padding-right: 10px;
-        box-sizing: border-box;
+          width: 100%;
+          padding-left: 10px;
+          padding-right: 10px;
+          box-sizing: border-box;
       }
     }
   </style>
 </head>
-<body>
 <div class="user-details">
   <h1 style="color: white;"> Work Projects </h1>
 </div>
-<div class="user-projects" data-url="https://portalis.ai/">
-  <div class="images-left">
-    <img alt="portalis" src="{{ "/assets/img/portalis.png" | prepend: site.baseurl }}" />
-  </div>
+<a href="https://portalis.ai/" class="user-projects">
+    <div class="images-left">
+      <img alt="portalis" src="{{ "/assets/img/portalis.png" | prepend: site.baseurl }}" />
+    </div>
   <div class="contents-right">
-    <h3 style="color: white;"> Portalis AI</h3>
+    <h3 style="color: white;"> Portalis </h3>
     <ul>
       <li style="color: white;"> Large Language Models </li>
-      <li style="color: white;"> Microservice Engineering </li>
+      <li style="color: white;"> Server Engineering </li>
     </ul>
     <p style="color: white;"> Speech to speech AI avatars, capable of memory, lookups, and document access. </p>
-    <a href="https://portalis.ai/" class="learn-more">Learn More</a>
   </div>
-  <div class="additional-text">
-    <h4 style="color: white;">About Portalis AI</h4>
-    <p style="color: white;">Portalis AI is revolutionizing human-computer interaction with its breakthrough conversational agents. Our technology combines state-of-the-art language processing with advanced memory systems to create AI assistants that maintain context and deliver personalized experiences.</p>
-    <p style="color: white;">Our platform supports integration with various document formats and knowledge bases, enabling AI avatars to access and leverage information in real-time conversations.</p>
-    <a href="https://portalis.ai/" style="color: white; text-decoration: underline;">Learn More</a>
-  </div>
-</div>
-<div class="user-projects" data-url="https://www.darpa.mil/program/gamebreaker">
+</a>
+<a href="https://www.darpa.mil/program/gamebreaker" class="user-projects">
   <div class="images-left">
     <img alt="starcraft" src="{{ "/assets/img/starcraft.jpg" | prepend: site.baseurl }}" />
   </div>
@@ -134,43 +55,47 @@
       <li style="color: white;"> Optimization </li>
     </ul>
     <p style="color: white;"> Battlefield evaluation, prediction, and composition optimization for Starcraft 2 and the Next Generation Threat System. </p>
-    <a href="https://www.darpa.mil/program/gamebreaker" class="learn-more">Learn More</a>
   </div>
-  <div class="additional-text">
-    <h4 style="color: white;">Gamebreaker Project Details</h4>
-    <p style="color: white;">The Gamebreaker program applies AI techniques to create revolutionary breakthroughs in game theory and strategic planning. Our work with StarCraft 2 demonstrates how machine learning can identify novel strategies and tactical approaches in complex environments.</p>
-    <p style="color: white;">By analyzing thousands of gameplay scenarios, our systems can predict outcomes and optimize decision-making processes for battlefield management and tactical operations.</p>
-    <a href="https://www.darpa.mil/program/gamebreaker" style="color: white; text-decoration: underline;">Visit DARPA Program Page</a>
-  </div>
+</a>
+<!-- <div class="user-details">
+  <h1 style="color: white;"> Personal Projects </h1>
 </div>
-<script>
-  document.querySelectorAll('.user-projects').forEach(card => {
-    card.addEventListener('click', (e) => {
-      // Only toggle if the click is not on the Learn More link
-      if (!e.target.classList.contains('learn-more')) {
-        e.preventDefault();
-        
-        // Toggle expanded class for the current card
-        card.classList.toggle('expanded');
-        
-        // If the card is expanded, show the additional text after 1 second
-        if (card.classList.contains('expanded')) {
-          setTimeout(() => {
-            const additionalText = card.querySelector('.additional-text');
-            if (additionalText) {
-              additionalText.style.opacity = '1';
-            }
-          }, 1000); // 1s delay
-        } else {
-          // If card is collapsed, immediately hide the additional text
-          const additionalText = card.querySelector('.additional-text');
-          if (additionalText) {
-            additionalText.style.opacity = '0';
-          }
-        }
-      }
-    });
-  });
-</script>
-</body>
-</html>
+<a href="https://github.com/ysarda/minezero" class="user-projects">
+  <div class="images-left">
+    <img alt="mountains" src="{{ "/assets/img/minecraft.jpg" | prepend: site.baseurl }}" />
+  </div>
+  <div class="contents-right">
+    <h3 style="color: white;"> MineZero </h3>
+    <ul>
+      <li style="color: white;"> Deep Reinforcement Learning </li>
+      <li style="color: white;"> Human-Agent Teaming </li>
+    </ul>
+    <p style="color: white;"> Exploring Minecraft as an open-world simulator for RL agents, with various objectives like collection, survival, and architecture. </p>
+  </div>
+</a>
+<a href="https://github.com/ysarda/perspective" class="user-projects">
+  <div class="images-left">
+    <img alt="drone" src="{{ "/assets/img/drone.jpg" | prepend: site.baseurl }}" />
+  </div>
+  <div class="contents-right">
+    <h3 style="color: white;"> Perspective </h3>
+    <ul>
+      <li style="color: white;"> Deep Reinforcement Learning</li>
+      <li style="color: white;"> Topology Optimization </li>
+    </ul>
+    <p style="color: white;"> Personal project on blended wing VTOL drones and autonomous flight. </p>
+  </div>
+</a>
+<a href="https://github.com/ysarda/rasr" class="user-projects">
+  <div class="images-left">
+    <img alt="meteors" src="{{ "/assets/img/meteor.jpg" | prepend: site.baseurl }}" />
+  </div>
+  <div class="contents-right">
+    <h3 style="color: white;"> RASR </h3>
+    <ul>
+      <li style="color: white;"> Deep Learning </li>
+      <li style="color: white;"> Information Fusion </li>
+    </ul>
+    <p style="color: white;"> Space object entry tracking for meteors and space debris. </p>
+  </div>
+</a> -->
