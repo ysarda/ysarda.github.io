@@ -1,8 +1,11 @@
+<!DOCTYPE html>
+<html>
 <head>
   <style type="text/css">
     .contents-right {
       margin-top: -10px;
       transition: all 0.7s ease-in-out;
+      opacity: 1; /* Adding opacity property for fade effect */
     }
 
     .user-projects {
@@ -42,6 +45,16 @@
       margin-top: 10px;
       transition: all 0.7s ease-in-out;
     }
+    
+    /* New section for the additional text */
+    .additional-text {
+      color: white;
+      margin-top: 15px;
+      opacity: 0;
+      height: 0;
+      overflow: hidden;
+      transition: opacity 0.7s ease-in-out;
+    }
 
     .user-projects.expanded {
       padding-bottom: 20px;
@@ -57,11 +70,20 @@
     }
 
     .user-projects.expanded .contents-right {
-      margin-top: 10px;
+      opacity: 0; /* Fade out the contents-right when expanded */
+      height: 0;
+      overflow: hidden;
+      margin: 0;
+      padding: 0;
     }
 
     .user-projects.expanded .learn-more {
       display: block;
+    }
+    
+    .user-projects.expanded .additional-text {
+      opacity: 1;
+      height: auto;
     }
 
     @media screen and (max-width: 600px) {
@@ -94,6 +116,12 @@
     <p style="color: white;"> Speech to speech AI avatars, capable of memory, lookups, and document access. </p>
     <a href="https://portalis.ai/" class="learn-more">Learn More</a>
   </div>
+  <div class="additional-text">
+    <h4 style="color: white;">About Portalis AI</h4>
+    <p style="color: white;">Portalis AI is revolutionizing human-computer interaction with its breakthrough conversational agents. Our technology combines state-of-the-art language processing with advanced memory systems to create AI assistants that maintain context and deliver personalized experiences.</p>
+    <p style="color: white;">Our platform supports integration with various document formats and knowledge bases, enabling AI avatars to access and leverage information in real-time conversations.</p>
+    <a href="https://portalis.ai/" style="color: white; text-decoration: underline;">Learn More</a>
+  </div>
 </div>
 <div class="user-projects" data-url="https://www.darpa.mil/program/gamebreaker">
   <div class="images-left">
@@ -108,6 +136,12 @@
     <p style="color: white;"> Battlefield evaluation, prediction, and composition optimization for Starcraft 2 and the Next Generation Threat System. </p>
     <a href="https://www.darpa.mil/program/gamebreaker" class="learn-more">Learn More</a>
   </div>
+  <div class="additional-text">
+    <h4 style="color: white;">Gamebreaker Project Details</h4>
+    <p style="color: white;">The Gamebreaker program applies AI techniques to create revolutionary breakthroughs in game theory and strategic planning. Our work with StarCraft 2 demonstrates how machine learning can identify novel strategies and tactical approaches in complex environments.</p>
+    <p style="color: white;">By analyzing thousands of gameplay scenarios, our systems can predict outcomes and optimize decision-making processes for battlefield management and tactical operations.</p>
+    <a href="https://www.darpa.mil/program/gamebreaker" style="color: white; text-decoration: underline;">Visit DARPA Program Page</a>
+  </div>
 </div>
 <script>
   document.querySelectorAll('.user-projects').forEach(card => {
@@ -115,9 +149,28 @@
       // Only toggle if the click is not on the Learn More link
       if (!e.target.classList.contains('learn-more')) {
         e.preventDefault();
+        
+        // Toggle expanded class for the current card
         card.classList.toggle('expanded');
+        
+        // If the card is expanded, show the additional text after 1 second
+        if (card.classList.contains('expanded')) {
+          setTimeout(() => {
+            const additionalText = card.querySelector('.additional-text');
+            if (additionalText) {
+              additionalText.style.opacity = '1';
+            }
+          }, 1000); // 1s delay
+        } else {
+          // If card is collapsed, immediately hide the additional text
+          const additionalText = card.querySelector('.additional-text');
+          if (additionalText) {
+            additionalText.style.opacity = '0';
+          }
+        }
       }
     });
   });
 </script>
 </body>
+</html>
