@@ -5,24 +5,28 @@
     /* Base styles */
     .user-projects {
       transition: all .7s;
-      text-decoration: none;
       color: inherit;
-      display: block;
       position: relative;
-      display: flex;
-      flex-wrap: wrap;
+      display: block;
+      margin-bottom: 20px;
     }
     .user-projects:hover {
       background-color: rgba(255, 255, 255, 0.1);
-      text-decoration: none;
-    }
-    .user-projects:visited {
-      color: inherit;
     }
     
     /* Layout structure */
+    .tab-content {
+      display: none;
+      width: 100%;
+      position: relative;
+    }
+    .tab-content.active {
+      display: block;
+    }
+    
     .images-left {
       width: 45%;
+      float: left;
       position: relative;
     }
     .images-left img {
@@ -32,11 +36,10 @@
     }
     .contents-right {
       width: 55%;
+      float: right;
       padding-left: 20px;
       box-sizing: border-box;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
+      margin-top: 20px; /* Space below tab container */
     }
     
     /* Tab system */
@@ -104,7 +107,6 @@
       text-decoration: none;
       font-size: 14px;
       transition: all 0.3s ease;
-      align-self: flex-start;
     }
     .learn-more:hover {
       background-color: rgba(255, 255, 255, 0.2);
@@ -114,6 +116,7 @@
     @media screen and (max-width: 768px) {
       .images-left, .contents-right {
         width: 100%;
+        float: none;
       }
       .contents-right {
         padding-left: 10px;
@@ -126,7 +129,9 @@
     // Function to handle tab switching
     function switchTab(projectId, tabName, event) {
       // Prevent event bubbling
-      event.stopPropagation();
+      if(event) {
+        event.stopPropagation();
+      }
       
       // Hide all tabs for this project
       var tabContents = document.querySelectorAll('#project-' + projectId + ' .tab-content');
@@ -152,13 +157,19 @@
         activeButton.classList.add('active');
       }
       
-      // Prevent default link behavior
-      return false;
+      // Prevent default link behavior if event exists
+      if(event) {
+        event.preventDefault();
+        return false;
+      }
+      return true;
     }
     
     // Function to allow clicking on Learn More without triggering the parent link
     function handleLearnMoreClick(event) {
-      event.stopPropagation();
+      if(event) {
+        event.stopPropagation();
+      }
     }
   </script>
 </head>
@@ -168,7 +179,7 @@
 </div>
 
 <!-- Portalis Project Card -->
-<div class="user-projects" id="project-portalis" onclick="window.location.href='https://portalis.ai/'">
+<div class="user-projects" id="project-portalis">
   <div class="tab-container" id="tabs-portalis">
     <button class="tab-button active" data-tab="image" onclick="return switchTab('portalis', 'image', event)">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -200,6 +211,7 @@
       <p style="color: white;">Speech to speech AI avatars, capable of memory, lookups, and document access.</p>
       <a href="https://portalis.ai/learn-more" class="learn-more" onclick="handleLearnMoreClick(event)">Learn More</a>
     </div>
+    <div style="clear: both;"></div>
   </div>
   
   <!-- Video Tab Content -->
@@ -218,11 +230,12 @@
       <p style="color: white;">Speech to speech AI avatars, capable of memory, lookups, and document access.</p>
       <a href="https://portalis.ai/learn-more" class="learn-more" onclick="handleLearnMoreClick(event)">Learn More</a>
     </div>
+    <div style="clear: both;"></div>
   </div>
 </div>
 
 <!-- Gamebreaker Project Card -->
-<div class="user-projects" id="project-gamebreaker" onclick="window.location.href='https://www.darpa.mil/program/gamebreaker'">
+<div class="user-projects" id="project-gamebreaker">
   <div class="tab-container" id="tabs-gamebreaker">
     <button class="tab-button active" data-tab="image" onclick="return switchTab('gamebreaker', 'image', event)">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -253,6 +266,7 @@
       <p style="color: white;">Battlefield evaluation, prediction, and composition optimization for Starcraft 2 and the Next Generation Threat System.</p>
       <a href="https://www.darpa.mil/program/gamebreaker/details" class="learn-more" onclick="handleLearnMoreClick(event)">Learn More</a>
     </div>
+    <div style="clear: both;"></div>
   </div>
   
   <div id="gamebreaker-video" class="tab-content">
@@ -270,6 +284,7 @@
       <p style="color: white;">Battlefield evaluation, prediction, and composition optimization for Starcraft 2 and the Next Generation Threat System.</p>
       <a href="https://www.darpa.mil/program/gamebreaker/details" class="learn-more" onclick="handleLearnMoreClick(event)">Learn More</a>
     </div>
+    <div style="clear: both;"></div>
   </div>
 </div>
 </body>
