@@ -28,6 +28,8 @@
       width: 45%;
       float: left;
       position: relative;
+      /* Set a consistent height to maintain card size */
+      min-height: 250px; /* Adjust this value based on your image heights */
     }
     .images-left img {
       width: 100%;
@@ -104,15 +106,13 @@
       position: relative;
       padding-bottom: 56.25%; /* 16:9 aspect ratio */
       height: 0;
-      overflow: hidden;
-      width: 100%;
     }
     .video-container iframe {
       position: absolute;
       top: 0;
       left: 0;
-      width: 986;
-      height: 555;
+      width: 100%;
+      height: 100%;
       border: 0;
     }
     
@@ -197,6 +197,32 @@
         event.stopPropagation();
       }
     }
+    
+    // Function to ensure consistent card heights after tab switch
+    document.addEventListener('DOMContentLoaded', function() {
+      // Get all tab buttons
+      var allTabButtons = document.querySelectorAll('.tab-button');
+      
+      // Add click listener to maintain card height
+      allTabButtons.forEach(function(button) {
+        button.addEventListener('click', function() {
+          // Get the current project card
+          var projectId = this.closest('.tab-container').id.replace('tabs-', '');
+          var projectCard = document.getElementById('project-' + projectId);
+          
+          // Get the current height before switching tabs
+          var currentHeight = projectCard.offsetHeight;
+          
+          // Set a minimum height to maintain sizing
+          projectCard.style.minHeight = currentHeight + 'px';
+          
+          // Remove the minimum height after transition completes
+          setTimeout(function() {
+            projectCard.style.minHeight = '';
+          }, 800); // Slightly longer than the CSS transition
+        });
+      });
+    });
   </script>
 </head>
 <body>
