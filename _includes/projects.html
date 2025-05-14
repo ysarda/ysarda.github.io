@@ -21,10 +21,12 @@
     .images-left img {
       width: 100%;
       height: auto;
-      transition: all .7s;
+      transition: all .7s ease-in-out;
+      transform: scale(1);
+      opacity: 1;
     }
     .contents-right {
-      transition: all .7s;
+      transition: all .7s ease-in-out;
     }
     .learn-more {
       display: none;
@@ -41,6 +43,8 @@
     }
     .user-projects.expanded .images-left img {
       width: 100%;
+      transform: scale(1.05);
+      opacity: 0.95;
     }
     .user-projects.expanded .contents-right {
       margin-top: 10px;
@@ -96,7 +100,6 @@
 <script>
   document.querySelectorAll('.user-projects').forEach(card => {
     card.addEventListener('click', (e) => {
-      // Only toggle if the click is not on the Learn More link
       if (!e.target.classList.contains('learn-more')) {
         e.preventDefault();
         card.classList.toggle('expanded');
