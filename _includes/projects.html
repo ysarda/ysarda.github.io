@@ -47,6 +47,7 @@
       display: flex;
       border-bottom: 1px solid rgba(255, 255, 255, 0.2);
       width: 100%;
+      position: relative;
     }
     .tab-button {
       padding: 8px 12px;
@@ -68,6 +69,24 @@
     }
     .tab-button svg {
       margin-right: 6px;
+    }
+    
+    /* Learn more button in tab bar */
+    .tab-learn-more {
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      padding: 6px 12px;
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 4px;
+      color: white;
+      text-decoration: none;
+      font-size: 14px;
+      transition: all 0.3s ease;
+    }
+    .tab-learn-more:hover {
+      background-color: rgba(255, 255, 255, 0.2);
     }
     
     /* Tab content */
@@ -113,15 +132,21 @@
     }
     
     /* Responsive styles */
-    @media screen and (max-width: 768px) {
-      .images-left, .contents-right {
+    @media screen and (max-width: 1200px) {
+      .images-left {
         width: 100%;
         float: none;
       }
       .contents-right {
+        width: 100%;
+        float: none;
         padding-left: 10px;
-        padding-right: 10px;
         margin-top: 10px;
+      }
+      .video-container {
+        width: 100%;
+        height: 0;
+        padding-bottom: 56.25%; /* 16:9 aspect ratio */
       }
     }
   </style>
@@ -195,6 +220,7 @@
       </svg>
       Demo Video
     </button>
+    <a href="https://portalis.ai/learn-more" class="tab-learn-more" onclick="handleLearnMoreClick(event)">Learn More</a>
   </div>
   
   <!-- Image Tab Content -->
@@ -209,7 +235,6 @@
         <li style="color: white;">Server Engineering</li>
       </ul>
       <p style="color: white;">Speech to speech AI avatars, capable of memory, lookups, and document access.</p>
-      <a href="https://portalis.ai/learn-more" class="learn-more" onclick="handleLearnMoreClick(event)">Learn More</a>
     </div>
     <div style="clear: both;"></div>
   </div>
@@ -218,7 +243,7 @@
   <div id="portalis-video" class="tab-content">
     <div class="images-left">
       <div class="video-container">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/5rEifan79pk?si=1CLO-i7g7_nzvaz5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <iframe width="986" height="555" src="https://www.youtube.com/embed/5rEifan79pk?si=1CLO-i7g7_nzvaz5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
       </div>
     </div>
     <div class="contents-right">
@@ -228,7 +253,6 @@
         <li style="color: white;">Server Engineering</li>
       </ul>
       <p style="color: white;">Speech to speech AI avatars, capable of memory, lookups, and document access.</p>
-      <a href="https://portalis.ai/learn-more" class="learn-more" onclick="handleLearnMoreClick(event)">Learn More</a>
     </div>
     <div style="clear: both;"></div>
   </div>
@@ -251,6 +275,7 @@
       </svg>
       Demo Video
     </button>
+    <a href="https://www.darpa.mil/program/gamebreaker/details" class="tab-learn-more" onclick="handleLearnMoreClick(event)">Learn More</a>
   </div>
   
   <div id="gamebreaker-image" class="tab-content active">
@@ -264,7 +289,6 @@
         <li style="color: white;">Optimization</li>
       </ul>
       <p style="color: white;">Battlefield evaluation, prediction, and composition optimization for Starcraft 2 and the Next Generation Threat System.</p>
-      <a href="https://www.darpa.mil/program/gamebreaker/details" class="learn-more" onclick="handleLearnMoreClick(event)">Learn More</a>
     </div>
     <div style="clear: both;"></div>
   </div>
@@ -272,7 +296,7 @@
   <div id="gamebreaker-video" class="tab-content">
     <div class="images-left">
       <div class="video-container">
-        <iframe src="https://youtu.be/tt5nxCi423U?si=CWH9vt0Qf8Fpl-nC" title="Gamebreaker Demo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe width="986" height="555" src="https://www.youtube.com/embed/tt5nxCi423U?si=KnrrOLK6iwnJslfQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
       </div>
     </div>
     <div class="contents-right">
@@ -282,7 +306,6 @@
         <li style="color: white;">Optimization</li>
       </ul>
       <p style="color: white;">Battlefield evaluation, prediction, and composition optimization for Starcraft 2 and the Next Generation Threat System.</p>
-      <a href="https://www.darpa.mil/program/gamebreaker/details" class="learn-more" onclick="handleLearnMoreClick(event)">Learn More</a>
     </div>
     <div style="clear: both;"></div>
   </div>
