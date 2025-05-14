@@ -3,15 +3,14 @@
 <head>
   <style type="text/css">
     /* Base styles */
-    .contents-right {
-      margin-top: 2px;
-    }
     .user-projects {
       transition: all .7s;
       text-decoration: none;
       color: inherit;
       display: block;
       position: relative;
+      display: flex;
+      flex-wrap: wrap;
     }
     .user-projects:hover {
       background-color: rgba(255, 255, 255, 0.1);
@@ -21,10 +20,30 @@
       color: inherit;
     }
     
+    /* Layout structure */
+    .images-left {
+      width: 45%;
+      position: relative;
+    }
+    .images-left img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .contents-right {
+      width: 55%;
+      padding-left: 20px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+    
     /* Tab system */
     .tab-container {
       display: flex;
       border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      width: 100%;
     }
     .tab-button {
       padding: 8px 12px;
@@ -51,6 +70,7 @@
     /* Tab content */
     .tab-content {
       display: none;
+      width: 100%;
     }
     .tab-content.active {
       display: block;
@@ -62,6 +82,7 @@
       padding-bottom: 56.25%; /* 16:9 aspect ratio */
       height: 0;
       overflow: hidden;
+      width: 100%;
     }
     .video-container iframe {
       position: absolute;
@@ -83,21 +104,21 @@
       text-decoration: none;
       font-size: 14px;
       transition: all 0.3s ease;
+      align-self: flex-start;
     }
     .learn-more:hover {
       background-color: rgba(255, 255, 255, 0.2);
     }
     
     /* Responsive styles */
-    @media screen and (max-width: 600px) {
-      .user-projects {
+    @media screen and (max-width: 768px) {
+      .images-left, .contents-right {
         width: 100%;
       }
       .contents-right {
-        width: 100%;
         padding-left: 10px;
         padding-right: 10px;
-        box-sizing: border-box;
+        margin-top: 10px;
       }
     }
   </style>
@@ -170,23 +191,34 @@
     <div class="images-left">
       <img alt="portalis" src="{{ "/assets/img/portalis.png" | prepend: site.baseurl }}" />
     </div>
+    <div class="contents-right">
+      <h3 style="color: white; margin-top: 0;">Portalis</h3>
+      <ul>
+        <li style="color: white;">Large Language Models</li>
+        <li style="color: white;">Server Engineering</li>
+      </ul>
+      <p style="color: white;">Speech to speech AI avatars, capable of memory, lookups, and document access.</p>
+      <a href="https://portalis.ai/learn-more" class="learn-more" onclick="handleLearnMoreClick(event)">Learn More</a>
+    </div>
   </div>
   
   <!-- Video Tab Content -->
   <div id="portalis-video" class="tab-content">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/5rEifan79pk?si=1CLO-i7g7_nzvaz5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <div class="images-left">
+      <div class="video-container">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/5rEifan79pk?si=1CLO-i7g7_nzvaz5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+    </div>
+    <div class="contents-right">
+      <h3 style="color: white; margin-top: 0;">Portalis</h3>
+      <ul>
+        <li style="color: white;">Large Language Models</li>
+        <li style="color: white;">Server Engineering</li>
+      </ul>
+      <p style="color: white;">Speech to speech AI avatars, capable of memory, lookups, and document access.</p>
+      <a href="https://portalis.ai/learn-more" class="learn-more" onclick="handleLearnMoreClick(event)">Learn More</a>
+    </div>
   </div>
-  
-  <div class="contents-right">
-    <h3 style="color: white;">Portalis</h3>
-    <ul>
-      <li style="color: white;">Large Language Models</li>
-      <li style="color: white;">Server Engineering</li>
-    </ul>
-    <p style="color: white;">Speech to speech AI avatars, capable of memory, lookups, and document access.</p>
-    <a href="https://portalis.ai/learn-more" class="learn-more" onclick="handleLearnMoreClick(event)">Learn More</a>
-  </div>
-  <div style="clear: both;"></div>
 </div>
 
 <!-- Gamebreaker Project Card -->
@@ -212,6 +244,15 @@
     <div class="images-left">
       <img alt="starcraft" src="{{ "/assets/img/starcraft.jpg" | prepend: site.baseurl }}" />
     </div>
+    <div class="contents-right">
+      <h3 style="color: white; margin-top: 0;">Gamebreaker</h3>
+      <ul>
+        <li style="color: white;">Deep Learning</li>
+        <li style="color: white;">Optimization</li>
+      </ul>
+      <p style="color: white;">Battlefield evaluation, prediction, and composition optimization for Starcraft 2 and the Next Generation Threat System.</p>
+      <a href="https://www.darpa.mil/program/gamebreaker/details" class="learn-more" onclick="handleLearnMoreClick(event)">Learn More</a>
+    </div>
   </div>
   
   <div id="gamebreaker-video" class="tab-content">
@@ -220,60 +261,16 @@
         <iframe src="https://youtu.be/tt5nxCi423U?si=CWH9vt0Qf8Fpl-nC" title="Gamebreaker Demo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
     </div>
+    <div class="contents-right">
+      <h3 style="color: white; margin-top: 0;">Gamebreaker</h3>
+      <ul>
+        <li style="color: white;">Deep Learning</li>
+        <li style="color: white;">Optimization</li>
+      </ul>
+      <p style="color: white;">Battlefield evaluation, prediction, and composition optimization for Starcraft 2 and the Next Generation Threat System.</p>
+      <a href="https://www.darpa.mil/program/gamebreaker/details" class="learn-more" onclick="handleLearnMoreClick(event)">Learn More</a>
+    </div>
   </div>
-  
-  <div class="contents-right">
-    <h3 style="color: white;">Gamebreaker</h3>
-    <ul>
-      <li style="color: white;">Deep Learning</li>
-      <li style="color: white;">Optimization</li>
-    </ul>
-    <p style="color: white;">Battlefield evaluation, prediction, and composition optimization for Starcraft 2 and the Next Generation Threat System.</p>
-    <a href="https://www.darpa.mil/program/gamebreaker/details" class="learn-more" onclick="handleLearnMoreClick(event)">Learn More</a>
-  </div>
-  <div style="clear: both;"></div>
 </div>
 </body>
 </html>
-<!-- <div class="user-details">
-  <h1 style="color: white;"> Personal Projects </h1>
-</div>
-<a href="https://github.com/ysarda/minezero" class="user-projects">
-  <div class="images-left">
-    <img alt="mountains" src="{{ "/assets/img/minecraft.jpg" | prepend: site.baseurl }}" />
-  </div>
-  <div class="contents-right">
-    <h3 style="color: white;"> MineZero </h3>
-    <ul>
-      <li style="color: white;"> Deep Reinforcement Learning </li>
-      <li style="color: white;"> Human-Agent Teaming </li>
-    </ul>
-    <p style="color: white;"> Exploring Minecraft as an open-world simulator for RL agents, with various objectives like collection, survival, and architecture. </p>
-  </div>
-</a>
-<a href="https://github.com/ysarda/perspective" class="user-projects">
-  <div class="images-left">
-    <img alt="drone" src="{{ "/assets/img/drone.jpg" | prepend: site.baseurl }}" />
-  </div>
-  <div class="contents-right">
-    <h3 style="color: white;"> Perspective </h3>
-    <ul>
-      <li style="color: white;"> Deep Reinforcement Learning</li>
-      <li style="color: white;"> Topology Optimization </li>
-    </ul>
-    <p style="color: white;"> Personal project on blended wing VTOL drones and autonomous flight. </p>
-  </div>
-</a>
-<a href="https://github.com/ysarda/rasr" class="user-projects">
-  <div class="images-left">
-    <img alt="meteors" src="{{ "/assets/img/meteor.jpg" | prepend: site.baseurl }}" />
-  </div>
-  <div class="contents-right">
-    <h3 style="color: white;"> RASR </h3>
-    <ul>
-      <li style="color: white;"> Deep Learning </li>
-      <li style="color: white;"> Information Fusion </li>
-    </ul>
-    <p style="color: white;"> Space object entry tracking for meteors and space debris. </p>
-  </div>
-</a> -->
