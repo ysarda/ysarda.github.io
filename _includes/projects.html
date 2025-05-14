@@ -2,23 +2,26 @@
 <html>
 <head>
   <style type="text/css">
-    .contents-right{
+    /* Base styles */
+    .contents-right {
       margin-top: -10px;
     }
-    .user-projects{
+    .user-projects {
       transition: all .7s;
       text-decoration: none;
       color: inherit;
-      display: block; /* Ensuring proper display */
+      display: block;
+      position: relative;
     }
-    .user-projects:hover{
+    .user-projects:hover {
       background-color: rgba(255, 255, 255, 0.1);
       text-decoration: none;
     }
     .user-projects:visited {
       color: inherit;
     }
-    /* Tab styles */
+    
+    /* Tab system */
     .tab-container {
       display: flex;
       border-bottom: 1px solid rgba(255, 255, 255, 0.2);
@@ -32,6 +35,7 @@
       display: flex;
       align-items: center;
       font-size: 14px;
+      transition: all 0.3s ease;
     }
     .tab-button:hover {
       color: white;
@@ -43,54 +47,67 @@
     .tab-button svg {
       margin-right: 6px;
     }
+    
+    /* Tab content */
     .tab-content {
       display: none;
     }
     .tab-content.active {
       display: block;
     }
-    .video-tab {
+    
+    /* Video container styling */
+    .video-container {
       position: relative;
-    }
-    .play-button {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      background-color: rgba(0, 0, 0, 0.5);
-      border-radius: 50%;
-      width: 60px;
-      height: 60px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border: none;
-      cursor: pointer;
-    }
-    .play-icon {
-      width: 0;
+      padding-bottom: 56.25%; /* 16:9 aspect ratio */
       height: 0;
-      border-top: 12px solid transparent;
-      border-left: 20px solid white;
-      border-bottom: 12px solid transparent;
-      margin-left: 5px;
+      overflow: hidden;
     }
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+    
+    /* Learn more button */
+    .learn-more {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 6px 12px;
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 4px;
+      color: white;
+      text-decoration: none;
+      font-size: 14px;
+      transition: all 0.3s ease;
+    }
+    .learn-more:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+    
+    /* Responsive styles */
     @media screen and (max-width: 600px) {
-      .user-projects{
+      .user-projects {
         width: 100%;
       }
       .contents-right {
-          width: 100%;
-          padding-left: 10px;
-          padding-right: 10px;
-          box-sizing: border-box;
+        width: 100%;
+        padding-left: 10px;
+        padding-right: 10px;
+        box-sizing: border-box;
       }
     }
   </style>
   <script>
     // Function to handle tab switching
-    function switchTab(projectId, tabName) {
-      // Hide all tabs
+    function switchTab(projectId, tabName, event) {
+      // Prevent event bubbling
+      event.stopPropagation();
+      
+      // Hide all tabs for this project
       var tabContents = document.querySelectorAll('#project-' + projectId + ' .tab-content');
       tabContents.forEach(function(tab) {
         tab.classList.remove('active');
@@ -114,18 +131,25 @@
         activeButton.classList.add('active');
       }
       
-      // Prevent default link behavior if it's a link
+      // Prevent default link behavior
       return false;
+    }
+    
+    // Function to allow clicking on Learn More without triggering the parent link
+    function handleLearnMoreClick(event) {
+      event.stopPropagation();
     }
   </script>
 </head>
 <body>
 <div class="user-details">
-  <h1 style="color: white;"> Work Projects </h1>
+  <h1 style="color: white;">Work Projects</h1>
 </div>
-<div class="user-projects" id="project-portalis">
+
+<!-- Portalis Project Card -->
+<div class="user-projects" id="project-portalis" onclick="window.location.href='https://portalis.ai/'">
   <div class="tab-container" id="tabs-portalis">
-    <button class="tab-button active" data-tab="image" onclick="return switchTab('portalis', 'image')">
+    <button class="tab-button active" data-tab="image" onclick="return switchTab('portalis', 'image', event)">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
         <circle cx="8.5" cy="8.5" r="1.5"></circle>
@@ -133,7 +157,7 @@
       </svg>
       Preview
     </button>
-    <button class="tab-button" data-tab="video" onclick="return switchTab('portalis', 'video')">
+    <button class="tab-button" data-tab="video" onclick="return switchTab('portalis', 'video', event)">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <polygon points="5 3 19 12 5 21 5 3"></polygon>
       </svg>
@@ -141,36 +165,39 @@
     </button>
   </div>
   
+  <!-- Image Tab Content -->
   <div id="portalis-image" class="tab-content active">
     <div class="images-left">
       <img alt="portalis" src="{{ "/assets/img/portalis.png" | prepend: site.baseurl }}" />
     </div>
   </div>
   
-  <div id="portalis-video" class="tab-content video-tab">
+  <!-- Video Tab Content -->
+  <div id="portalis-video" class="tab-content">
     <div class="images-left">
-      <!-- Replace with actual video embed or proper video path -->
-      <img alt="portalis video thumbnail" src="{{ "/assets/img/portalis.png" | prepend: site.baseurl }}" style="opacity: 0.7;" />
-      <button class="play-button">
-        <div class="play-icon"></div>
-      </button>
+      <div class="video-container">
+        <!-- Replace with your actual YouTube video ID -->
+        <iframe src="https://youtu.be/5rEifan79pk?si=CKhbffXwJE6RWPM1" title="Portalis Demo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
     </div>
   </div>
   
   <div class="contents-right">
-    <h3 style="color: white;"> Portalis </h3>
+    <h3 style="color: white;">Portalis</h3>
     <ul>
-      <li style="color: white;"> Large Language Models </li>
-      <li style="color: white;"> Server Engineering </li>
+      <li style="color: white;">Large Language Models</li>
+      <li style="color: white;">Server Engineering</li>
     </ul>
-    <p style="color: white;"> Speech to speech AI avatars, capable of memory, lookups, and document access. </p>
+    <p style="color: white;">Speech to speech AI avatars, capable of memory, lookups, and document access.</p>
+    <a href="https://portalis.ai/learn-more" class="learn-more" onclick="handleLearnMoreClick(event)">Learn More</a>
   </div>
   <div style="clear: both;"></div>
 </div>
 
-<div class="user-projects" id="project-gamebreaker">
+<!-- Gamebreaker Project Card -->
+<div class="user-projects" id="project-gamebreaker" onclick="window.location.href='https://www.darpa.mil/program/gamebreaker'">
   <div class="tab-container" id="tabs-gamebreaker">
-    <button class="tab-button active" data-tab="image" onclick="return switchTab('gamebreaker', 'image')">
+    <button class="tab-button active" data-tab="image" onclick="return switchTab('gamebreaker', 'image', event)">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
         <circle cx="8.5" cy="8.5" r="1.5"></circle>
@@ -178,7 +205,7 @@
       </svg>
       Preview
     </button>
-    <button class="tab-button" data-tab="video" onclick="return switchTab('gamebreaker', 'video')">
+    <button class="tab-button" data-tab="video" onclick="return switchTab('gamebreaker', 'video', event)">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <polygon points="5 3 19 12 5 21 5 3"></polygon>
       </svg>
@@ -192,23 +219,22 @@
     </div>
   </div>
   
-  <div id="gamebreaker-video" class="tab-content video-tab">
+  <div id="gamebreaker-video" class="tab-content">
     <div class="images-left">
-      <!-- Replace with actual video embed or proper video path -->
-      <img alt="starcraft video thumbnail" src="{{ "/assets/img/starcraft.jpg" | prepend: site.baseurl }}" style="opacity: 0.7;" />
-      <button class="play-button">
-        <div class="play-icon"></div>
-      </button>
+      <div class="video-container">
+        <iframe src="https://youtu.be/tt5nxCi423U?si=CWH9vt0Qf8Fpl-nC" title="Gamebreaker Demo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
     </div>
   </div>
   
   <div class="contents-right">
-    <h3 style="color: white;"> Gamebreaker </h3>
+    <h3 style="color: white;">Gamebreaker</h3>
     <ul>
-      <li style="color: white;"> Deep Learning </li>
-      <li style="color: white;"> Optimization </li>
+      <li style="color: white;">Deep Learning</li>
+      <li style="color: white;">Optimization</li>
     </ul>
-    <p style="color: white;"> Battlefield evaluation, prediction, and composition optimization for Starcraft 2 and the Next Generation Threat System. </p>
+    <p style="color: white;">Battlefield evaluation, prediction, and composition optimization for Starcraft 2 and the Next Generation Threat System.</p>
+    <a href="https://www.darpa.mil/program/gamebreaker/details" class="learn-more" onclick="handleLearnMoreClick(event)">Learn More</a>
   </div>
   <div style="clear: both;"></div>
 </div>
