@@ -21,13 +21,10 @@
     .images-left img {
       width: 100%;
       height: auto;
-      transition: all .5s ease-in-out; /* Reduced duration for snappier feel */
-      transform: scale(1);
-      opacity: 1;
-      filter: brightness(100%); /* Added for brightness transition */
+      transition: all .7s;
     }
     .contents-right {
-      transition: all .7s ease-in-out;
+      transition: all .7s;
     }
     .learn-more {
       display: none;
@@ -37,23 +34,24 @@
     }
     .user-projects.expanded {
       padding-bottom: 20px;
+      transition: all 0.7s ease-in-out;
     }
     .user-projects.expanded .images-left {
       width: 100%;
       margin-bottom: 10px;
+      transition: all 0.7s ease-in-out;
     }
     .user-projects.expanded .images-left img {
       width: 100%;
-      transform: scale(1.1) rotate(2deg); /* More noticeable scale and slight rotation */
-      opacity: 0.9; /* Slightly more fade */
-      filter: brightness(110%); /* Brighten slightly */
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+      transition: all 0.7s ease-in-out;
     }
     .user-projects.expanded .contents-right {
       margin-top: 10px;
+      transition: all 0.7s ease-in-out;
     }
     .user-projects.expanded .learn-more {
       display: block;
+      transition: all 0.7s ease-in-out;
     }
     @media screen and (max-width: 600px) {
       .user-projects {
@@ -103,6 +101,7 @@
 <script>
   document.querySelectorAll('.user-projects').forEach(card => {
     card.addEventListener('click', (e) => {
+      // Only toggle if the click is not on the Learn More link
       if (!e.target.classList.contains('learn-more')) {
         e.preventDefault();
         card.classList.toggle('expanded');
