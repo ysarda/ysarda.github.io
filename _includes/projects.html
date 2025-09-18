@@ -365,19 +365,41 @@
     <p style="color: white;"> Personal project on blended wing VTOL drones and autonomous flight. </p>
   </div>
 </a> -->
-<a href="https://github.com/ysarda/rasr" class="user-projects">
-  <div class="images-left">
-    <img alt="meteors" src="{{ "/assets/img/meteor.jpg" | prepend: site.baseurl }}" />
+<!-- RASR Project Card -->
+<div class="user-projects" id="project-portalis">
+  <div class="tab-container" id="tabs-portalis">
+    <button class="tab-button active" data-tab="image" onclick="return switchTab('rasr', 'image', event)">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+        <circle cx="8.5" cy="8.5" r="1.5"></circle>
+        <polyline points="21 15 16 10 5 21"></polyline>
+      </svg>
+      Preview
+    </button>
+    <!-- <button class="tab-button" data-tab="video" onclick="return switchTab('portalis', 'video', event)">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polygon points="5 3 19 12 5 21 5 3"></polygon>
+      </svg>
+      Video
+    </button> -->
+    <a href="https://github.com/ysarda/rasr" class="tab-learn-more" onclick="handleLearnMoreClick(event)">Learn More</a>
   </div>
-  <div class="contents-right">
-    <h3 style="color: white;"> RASR </h3>
-    <ul>
-      <li style="color: white;"> Deep Learning </li>
-      <li style="color: white;"> Information Fusion </li>
-    </ul>
-    <p style="color: white;"> Space object entry tracking for meteors and space debris. </p>
+  
+  <!-- Image Tab Content -->
+  <div id="rasr-image" class="tab-content active">
+    <div class="images-left">
+      <img alt="rasr" src="{{ "/assets/img/meteor.jpg" | prepend: site.baseurl }}" />
+    </div>
+    <div class="contents-right">
+      <h3 style="color: white; margin-top: 0;">RASR</h3>
+      <ul>
+        <li style="color: white;"> Deep Learning </li>
+        <li style="color: white;"> Information Fusion </li>
+      </ul>
+      <p style="color: white;"> Machine learning and information fusion for meteor and anthropogenic space object tracking. </p>
+    </div>
+    <div style="clear: both;"></div>
   </div>
-</a> -->
 
 </body>
 </html>
