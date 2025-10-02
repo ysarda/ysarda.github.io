@@ -376,13 +376,16 @@
       </svg>
       Preview
     </button>
-    <!-- <button class="tab-button" data-tab="video" onclick="return switchTab('portalis', 'video', event)">
+    <button class="tab-button" data-tab="report" href="{{ "/assets/files/RASRreport.pdf" | prepend: site.baseurl }}">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <polygon points="5 3 19 12 5 21 5 3"></polygon>
+        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+        <polyline points="14 2 14 8 20 8"></polyline>
+        <line x1="16" y1="13" x2="8" y2="13"></line>
+        <line x1="16" y1="17" x2="8" y2="17"></line>
+        <polyline points="10 9 9 9 8 9"></polyline>
       </svg>
-      Video
-    </button> -->
-    <a href="{{ "/assets/files/RASRreport.pdf" | prepend: site.baseurl }}" class="tab-learn-more" onclick="handleLearnMoreClick(event)" style="right: 110px;">Report</a>
+      Report
+    </button>
     <a href="https://github.com/ysarda/rasr" class="tab-learn-more" onclick="handleLearnMoreClick(event)">Learn More</a>
   </div>
   
