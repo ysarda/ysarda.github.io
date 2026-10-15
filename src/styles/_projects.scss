@@ -11,7 +11,14 @@
 }
 
 .user-projects {
+  position: relative;
+  display: block;
   margin: 20px auto;
+  color: inherit;
+  transition: all .7s;
+  &:hover {
+    background-color: $overlay;
+  }
   img {
     max-width: 100%;
     height: auto;
@@ -21,7 +28,7 @@
     margin: 0;
   }
   li {
-    color: $main;
+    color: $text;
     font-size: 1.1rem;
   }
   p {
@@ -29,41 +36,102 @@
   }
 }
 
-.contents {
-  @media only screen and (min-width: $cut) {
-    margin-left: 0;
-    width: 48%;
+.images-left {
+  position: relative;
+  float: left;
+  width: 45%;
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
   }
 }
 
 .contents-right {
-  @media only screen and (min-width: $cut) {
-    float: right;
-    margin-top: 5%;
-    width: 48%;
-  }
+  float: right;
+  width: 55%;
+  margin: 10px 0 0;
+  padding-left: 20px;
+  box-sizing: border-box;
 }
-.images-right {
-  @media only screen and (min-width: $cut) {
-    float: right;
-    width: 48%;
+
+// Tabs
+.tab-container {
+  position: relative;
+  display: flex;
+  width: 100%;
+  border-bottom: 1px solid $overlay-strong;
+}
+
+.tab-button {
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+  background: transparent;
+  border: none;
+  color: $text-muted;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  &:hover {
+    color: $text;
   }
-  img {
-    @media only screen and (min-width: $cut) {
-      float: right;
-    }
+  &.active {
+    background-color: $overlay;
+    color: $text;
+  }
+  svg {
+    margin-right: 6px;
   }
 }
 
-.images-left {
-  @media only screen and (min-width: $cut) {
-    float: left;
-    width: 48%;
+.tab-content {
+  display: none;
+  position: relative;
+  width: 100%;
+  &.active {
+    display: block;
   }
-  img {
-    @media only screen and (min-width: $cut) {
-      float: left;
-    }
+}
+
+// "Learn more" buttons (in the tab bar and inline)
+.tab-learn-more,
+.learn-more {
+  padding: 6px 12px;
+  background-color: $overlay;
+  border-radius: 4px;
+  color: $text;
+  font-size: 14px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  &:hover {
+    background-color: $overlay-strong;
+  }
+}
+
+.tab-learn-more {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.learn-more {
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.video-container {
+  position: relative;
+  height: 0;
+  padding-bottom: 56.25%; // 16:9
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
   }
 }
 
@@ -71,31 +139,38 @@
   display: inline-block;
   margin: 10px 0px;
   padding: 5px;
-  color: $main;
+  color: $text;
   background-color: transparent;
-  border: 1px solid $main;
+  border: 1px solid $text;
   border-radius: 10px;
   text-align: center;
-  outline: none;
   text-decoration: none;
   cursor: pointer;
   transition: color 0.3s ease-out,
               background-color 0.3s ease-out,
               border-color 0.3s ease-out;
-  &:hover {
+  &:hover,
+  &:active {
     background-color: $purple;
     border-color: $purple;
-    color: #fff;
+    color: $text;
     transition: color 0.3s ease-in,
                 background-color 0.3s ease-in,
                 border-color 0.3s ease-in;
   }
-  &:active {
-    background-color: $purple;
-    border-color: $purple;
-    color: #fff;
-    transition: color 0.3s ease-in,
-                background-color 0.3s ease-in,
-                border-color 0.3s ease-in;
+  &:focus-visible {
+    outline: 2px solid $text;
+    outline-offset: 2px;
+  }
+}
+
+@media only screen and (max-width: $bp-stack) {
+  .images-left,
+  .contents-right {
+    float: none;
+    width: 100%;
+  }
+  .contents-right {
+    padding-left: 10px;
   }
 }

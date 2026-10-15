@@ -1,5 +1,5 @@
 #particles-js {
-  background: #1a222c;
+  background: $bg;
   display: flex;
   vertical-align: bottom;
   width: 100%;
@@ -16,7 +16,7 @@
 .header {
   z-index: 1;
   text-align: center;
-  color:#FFF;
+  color: $text;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -27,7 +27,7 @@
     font-size: 50px;
     display: block;
     line-height: 1;
-    color: #FFF;
+    color: $text;
     @media only screen and (min-width:$cut){
       margin: 0;
       font-size: 100px;
@@ -37,7 +37,7 @@
     font-size: 20px;
     display: block;
     line-height: 1;
-    color: #FFF;
+    color: $text;
     margin-top: 10px;
     @media only screen and (min-width:$cut){
       font-size: 40px;
@@ -49,12 +49,16 @@
   margin: 10px;
   text-align: center;
   .link {
-    color: #FFF;
+    color: $text;
     text-decoration: none;
     font-size: 15px;
     margin: 10px;
     @media only screen and (min-width:$cut){
       font-size: 20px;
+    }
+    &:hover {
+      -webkit-text-fill-color: transparent;
+      -webkit-text-stroke: 1px;
     }
   }
 }
@@ -65,22 +69,22 @@
   text-align: center;
   .icon {
     text-align: center;
-    color: #FFF;
+    color: $text;
     width: 20px;
     height: 20px;
     font-size: 20px;
     padding: 10px;
     margin: 5px;
     border-radius: 50%;
-    border: 2px solid #FFF;
+    border: 2px solid $text;
     transition: all .7s;
     &:hover {
-      color: $main;
-      background: #FFF;
+      color: $bg;
+      background: $text;
     }
     &:active {
-      color: $main;
-      background: #FFF;
+      color: $bg;
+      background: $text;
     }
     @media only screen and (min-width:$cut) {
       width: 35px;
@@ -91,7 +95,7 @@
 }
 
 .down {
-  color: #FFF;
+  color: $text;
   position: absolute;
   bottom: 25px;
   width: 100%;
@@ -110,14 +114,14 @@
       transform: translate(-50%, -50%);
       width: 100px;
       height: 100px;
-      fill: #fff;
+      fill: $text;
       -webkit-animation: pulse 1.3s infinite;
       animation: pulse 1.3s infinite;
       &:hover {
-        color: $sec;
+        color: $accent;
       }
       &:active {
-        color: $sec;
+        color: $accent;
       }
   }
 }

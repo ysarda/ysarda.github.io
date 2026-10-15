@@ -1,21 +1,21 @@
 .footer {
-  background: #1a222c;
+  background: $bg-alt;
   padding: 10px 0;
   margin-top: 100px;
   text-align: center;
-  color: #FFF;
+  color: $text;
   .love {
     color: red;
   }
   a {
     text-decoration: none;
     margin: 0;
-    color: #FFF;
+    color: $text;
     &:hover{
-      color: $sec;
+      color: $accent;
     }
     &:active {
-      color: $sec;
+      color: $accent;
     }
   }
 }

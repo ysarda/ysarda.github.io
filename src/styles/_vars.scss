@@ -1,4 +1,17 @@
-$main: white;
-$sec: #594b64;
+// Palette
+$bg: #1a222c;
+$bg-alt: #211a2c;
+$text: #fff;
+$text-muted: rgba(255, 255, 255, 0.6);
+$accent: #594b64;
 $purple: #54516A;
-$cut: 550px;
+$overlay: rgba(255, 255, 255, 0.1);
+$overlay-strong: rgba(255, 255, 255, 0.2);
+$card-1: rgb(54, 38, 82);
+$card-2: rgb(52, 52, 97);
+$timeline-line: rgb(41, 32, 61);
+$timeline-dot: #3c334e;
+
+// Breakpoints
+$cut: 600px;
+$bp-stack: 1200px;

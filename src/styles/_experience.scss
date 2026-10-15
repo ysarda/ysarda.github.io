@@ -1,124 +1,128 @@
-$color: rgb(108, 31, 146);
-$lineColor: #1e0a30;
-$fontColor: #bbb;
-$bgColor1: #122;
-$bgColor2: #444;
-$yearBgColor: #333;
-
-$breakpoint: 600px;
-
 .timeline {
   position: relative;
-  padding: 1rem;
+  max-width: 1200px;
   margin: 0 auto;
-  max-width: 1300px;
-  
-  &:before {
+  box-sizing: border-box;
+  // centre line
+  &::after {
     content: '';
     position: absolute;
-    height: 100%;
-    border: 1px solid $lineColor;
-    right: 40px;
     top: 0;
-  }
-  
-  &:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-  
-  @media screen and (min-width: $breakpoint) {
-    padding: 2rem;
-    &:before {
-      left: calc(50% - 1px);
-      right: auto;
-    }
+    bottom: 0;
+    left: 50%;
+    width: 6px;
+    margin-left: -3px;
+    background-color: $timeline-line;
+    box-sizing: border-box;
   }
 }
 
-.timeline__item {
-  
-  padding: 1rem;
-  border: 2px solid $lineColor;
-  border-image: linear-gradient(to right, $color 0%, $lineColor 100%);
-  border-image-slice: 1;
+.container {
   position: relative;
-  margin: 1rem 3rem 1rem 1rem;
-  clear: both;
-  
-  &:after,
-  &:before {
+  width: 50%;
+  padding: 10px 40px;
+  background-color: inherit;
+  border: 7px solid $text;
+  box-sizing: border-box;
+  // dot on the centre line
+  &::after {
     content: '';
     position: absolute;
+    top: 15px;
+    right: -13px;
+    z-index: 1;
+    width: 25px;
+    height: 25px;
+    background-color: $text;
+    border: 4px solid $timeline-dot;
+    border-radius: 50%;
+    box-sizing: border-box;
   }
-  
-  &:before {
-    right: -10px;
-    top: calc(50% - 5px);
+  // arrow pointing at the line
+  &::before {
+    content: " ";
+    position: absolute;
+    top: 22px;
+    z-index: 1;
+    width: 0;
+    height: 0;
+    box-sizing: border-box;
+  }
+}
+
+@mixin timeline-card($bg, $side) {
+  background-color: $bg;
+  border: 5px solid $text;
+  box-sizing: border-box;
+  transition: all .7s;
+  &:hover {
+    border-color: $bg;
+  }
+  &::before {
+    @if $side == left {
+      right: 30px;
+      border-width: 10px 0 10px 10px;
+      border-color: transparent transparent transparent $bg;
+    } @else {
+      left: 30px;
+      border-width: 10px 10px 10px 1px;
+      border-color: transparent $bg transparent transparent;
+    }
     border-style: solid;
-    border-color: $lineColor $lineColor transparent transparent;
-    border-width: 10px;
-    transform: rotate(45deg);
   }
-  
-  @media screen and (min-width: $breakpoint) {
-    width: 44%;
-    margin: 1rem;
-    
-    &:nth-of-type(2n) {
-      float: right;
-      margin: 1rem;
-      border-image: linear-gradient(to right, $lineColor 0%, $color 100%);
-      border-image-slice: 1;
+}
 
-      &:before {
-        right: auto;
-        left: -10px;
-      border-color:transparent transparent $lineColor $lineColor;
-      }
+.one {
+  left: 0;
+  @include timeline-card($card-1, left);
+}
+
+.two {
+  left: 50%;
+  @include timeline-card($card-2, right);
+  &::after {
+    left: -13px;
+  }
+}
+
+.content {
+  position: relative;
+  padding: 20px 30px;
+  color: $text;
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+
+@media screen and (max-width: $cut) {
+  .timeline::after {
+    left: 31px;
+  }
+
+  .container {
+    width: 100%;
+    padding-left: 70px;
+    padding-right: 25px;
+    &::before {
+      left: 60px;
+      border: medium solid $text;
+      border-width: 10px 10px 10px 0;
     }
   }
-}
 
-.timeline__item--year {
-    text-align: center;
-  max-width: 150px;
-  margin: 0 48px 0 auto;
-  font-size: 1.8rem;
-  background-color: $yearBgColor;
-  line-height: 1;
-  border-image: none;
-  padding: .5rem 1rem 1rem;
-  
-  &:before {
-    display: none;
+  .one::before {
+    border-color: transparent $card-1 transparent transparent;
   }
-  
-  @media screen and (min-width: $breakpoint) {
-    text-align: center;
-      margin: 0 auto;
-    
-    &:nth-of-type(2n) {
-      float: none;
-      margin: 0 auto;
-      border-image: none;
-  
-      &:before {
-        display: none;
-      }
-    }
+
+  .two::before {
+    border-color: transparent $card-2 transparent transparent;
   }
-}
 
-.timeline__title {
-  margin: 0;
-  font-family: 'Raleway', sans-serif;
-  font-size: 1.5em;
-}
+  .one::after,
+  .two::after {
+    left: 15px;
+  }
 
-.timeline__blurb {
-  line-height: 1.5;
-  font-size: 1rem;
-  margin: .5rem 0 0;
+  .two {
+    left: 0;
+  }
 }
