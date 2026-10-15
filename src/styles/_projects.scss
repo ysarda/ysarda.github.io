@@ -1,3 +1,5 @@
+@use 'vars' as *;
+
 #projects {
   display: flex;
   flex-direction: column;
@@ -88,6 +90,10 @@
     background-color: $overlay;
     color: $text;
   }
+  &:focus-visible {
+    outline: 2px solid $text;
+    outline-offset: -2px;
+  }
   svg {
     margin-right: 6px;
   }
@@ -114,6 +120,10 @@
   transition: all 0.3s ease;
   &:hover {
     background-color: $overlay-strong;
+  }
+  &:focus-visible {
+    outline: 2px solid $text;
+    outline-offset: 2px;
   }
 }
 

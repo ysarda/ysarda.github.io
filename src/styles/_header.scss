@@ -1,3 +1,5 @@
+@use 'vars' as *;
+
 #particles-js {
   background: $bg;
   display: flex;
@@ -56,9 +58,10 @@
     @media only screen and (min-width:$cut){
       font-size: 20px;
     }
-    &:hover {
-      -webkit-text-fill-color: transparent;
-      -webkit-text-stroke: 1px;
+    &:hover,
+    &:focus-visible {
+      text-decoration: underline;
+      text-underline-offset: 4px;
     }
   }
 }
@@ -124,4 +127,17 @@
         color: $accent;
       }
   }
+}
+
+// Visible keyboard focus for header controls
+.header a:focus-visible,
+.down:focus-visible {
+  outline: 2px solid $text;
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+.header-icons a:focus-visible .icon {
+  color: $bg;
+  background: $text;
 }

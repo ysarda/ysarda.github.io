@@ -2,7 +2,7 @@ var gulp = require('gulp');
 var csso = require('gulp-csso');
 var uglify = require('gulp-uglify');
 var concat = require('gulp-concat');
-var sass = require('gulp-sass');
+var sass = require('gulp-sass')(require('sass'));
 var plumber = require('gulp-plumber');
 var cp = require('child_process');
 var imagemin = require('gulp-imagemin');
@@ -45,7 +45,7 @@ gulp.task('browser-sync', gulp.series(['jekyll-build'], function(done) {
 gulp.task('sass', function() {
   return gulp.src('src/styles/**/*.scss')
     .pipe(plumber())
-    .pipe(sass())
+    .pipe(sass({ quietDeps: true }))
     .pipe(csso())
 		.pipe(gulp.dest('assets/css/'))
 });
