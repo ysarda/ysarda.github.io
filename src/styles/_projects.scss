@@ -12,12 +12,11 @@
   margin: 0 0 1.5rem;
   overflow: hidden;
   color: inherit;
-  background-color: $glass;
-  border: 1px solid $overlay;
+  @include card-surface;
   border-radius: $card-radius;
   transition: all .4s;
   &:hover {
-    background-color: $overlay;
+    background-image: linear-gradient($overlay, $overlay);
     border-color: $glass-border-hover;
   }
   img {

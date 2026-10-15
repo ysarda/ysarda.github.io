@@ -8,6 +8,7 @@ $purple: #54516A;
 $overlay: rgba(255, 255, 255, 0.1);
 $overlay-strong: rgba(255, 255, 255, 0.2);
 $glass: rgba(255, 255, 255, 0.03);
+$card-bg: $bg;  // solid base under the glass tint, so cards sit in front of the particles
 $glass-border-hover: rgba(255, 255, 255, 0.35);
 
 // Typography
@@ -26,3 +27,12 @@ $bp-stack: 1200px;
 $content-width: 960px;
 $section-gap: 3rem;
 $card-radius: 10px;
+
+// Card surface: opaque, so cards sit in front of the particles, but filled with
+// exactly the page background at the card's position (--t is 0 at the top of
+// the page and 1 at the bottom, set in src/js/cards.js). The card reads as
+// untinted; only its border shows.
+@mixin card-surface {
+  background-color: color-mix(in srgb, $bg, $bg-alt calc(var(--t, 0) * 100%));
+  border: 1px solid $overlay;
+}

@@ -22,13 +22,12 @@
   position: relative;
   width: 50%;
   margin-bottom: 1.25rem;
-  background-color: $glass;
-  border: 1px solid $overlay;
+  @include card-surface;
   border-radius: $card-radius;
   box-sizing: border-box;
   transition: all .4s;
   &:hover {
-    background-color: $overlay;
+    background-image: linear-gradient($overlay, $overlay);
     border-color: $glass-border-hover;
   }
   // dot on the centre line

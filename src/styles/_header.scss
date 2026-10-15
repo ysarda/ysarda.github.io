@@ -1,17 +1,35 @@
 @use 'vars' as *;
 
+// The hero is a plain full-height block; the particles themselves live in the
+// page-wide layer below so they can carry on down the sides of the page.
 #particles-js {
-  background: transparent;
+  position: relative; // anchors the absolutely-positioned name, icons and links
   display: flex;
   vertical-align: bottom;
   width: 100%;
   min-height: 100vh;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
+}
+
+// Page-long particle layer behind all content, so the particles scroll with
+// the page and cover all of it. Cards have solid backgrounds, so they sit in
+// front of it.
+body {
+  position: relative;
+}
+
+#page-particles {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
   .particles-js-canvas-el {
-    width:100% !important;
-    height:100vh !important;
+    display: block;
+    width: 100% !important;
+    height: 100% !important;
   }
 }
 
@@ -25,6 +43,10 @@
   margin: 0 auto;
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
+  h1 {
+    // same gap below the name as between the icons and the links
+    margin-bottom: 13px;
+  }
   .site-title {
     font-size: 40px;
     display: block;
