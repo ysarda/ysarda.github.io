@@ -1,7 +1,7 @@
 @use 'vars' as *;
 
 #particles-js {
-  background: $bg;
+  background: transparent;
   display: flex;
   vertical-align: bottom;
   width: 100%;
@@ -26,23 +26,13 @@
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   .site-title {
-    font-size: 50px;
+    font-size: 40px;
     display: block;
     line-height: 1;
     color: $text;
     @media only screen and (min-width:$cut){
       margin: 0;
-      font-size: 100px;
-    }
-  }
-  .site-description {
-    font-size: 20px;
-    display: block;
-    line-height: 1;
-    color: $text;
-    margin-top: 10px;
-    @media only screen and (min-width:$cut){
-      font-size: 40px;
+      font-size: 72px;
     }
   }
 }

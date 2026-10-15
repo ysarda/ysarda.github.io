@@ -1,127 +1,103 @@
 @use 'vars' as *;
 
+// Timeline: glass cards alternate either side of a centre line
 .timeline {
   position: relative;
-  max-width: 1200px;
-  margin: 0 auto;
+  padding-bottom: $section-gap;
   box-sizing: border-box;
   // centre line
   &::after {
     content: '';
     position: absolute;
     top: 0;
-    bottom: 0;
+    bottom: $section-gap;
     left: 50%;
-    width: 6px;
-    margin-left: -3px;
-    background-color: $timeline-line;
-    box-sizing: border-box;
+    width: 2px;
+    margin-left: -1px;
+    background-color: $overlay-strong;
   }
 }
 
 .container {
   position: relative;
   width: 50%;
-  padding: 10px 40px;
-  background-color: inherit;
-  border: 7px solid $text;
+  margin-bottom: 1.25rem;
+  background-color: $glass;
+  border: 1px solid $overlay;
+  border-radius: $card-radius;
   box-sizing: border-box;
+  transition: all .4s;
+  &:hover {
+    background-color: $overlay;
+    border-color: $glass-border-hover;
+  }
   // dot on the centre line
   &::after {
     content: '';
     position: absolute;
-    top: 15px;
-    right: -13px;
+    top: 20px;
+    right: -14px;
     z-index: 1;
-    width: 25px;
-    height: 25px;
+    width: 26px;
+    height: 26px;
     background-color: $text;
-    border: 4px solid $timeline-dot;
+    border: 4px solid $bg;
     border-radius: 50%;
     box-sizing: border-box;
-  }
-  // arrow pointing at the line
-  &::before {
-    content: " ";
-    position: absolute;
-    top: 22px;
-    z-index: 1;
-    width: 0;
-    height: 0;
-    box-sizing: border-box;
-  }
-}
-
-@mixin timeline-card($bg, $side) {
-  background-color: $bg;
-  border: 5px solid $text;
-  box-sizing: border-box;
-  transition: all .7s;
-  &:hover {
-    border-color: $bg;
-  }
-  &::before {
-    @if $side == left {
-      right: 30px;
-      border-width: 10px 0 10px 10px;
-      border-color: transparent transparent transparent $bg;
-    } @else {
-      left: 30px;
-      border-width: 10px 10px 10px 1px;
-      border-color: transparent $bg transparent transparent;
-    }
-    border-style: solid;
   }
 }
 
 .one {
   left: 0;
-  @include timeline-card($card-1, left);
 }
 
 .two {
   left: 50%;
-  @include timeline-card($card-2, right);
   &::after {
-    left: -13px;
+    right: auto;
+    left: -12px;
   }
 }
 
 .content {
   position: relative;
-  padding: 20px 30px;
+  padding: 1rem 1.5rem;
   color: $text;
-  border-radius: 6px;
   box-sizing: border-box;
+  p {
+    margin: 0;
+  }
+  // date / role / organisation hierarchy
+  p:first-child {
+    margin-bottom: .25rem;
+    color: $text-muted;
+    font-size: $fs-small;
+  }
+  p:nth-child(2) {
+    font-weight: $fw-title;
+    font-size: $fs-card-title;
+    line-height: 1.25;
+  }
+  p:nth-child(n+3) {
+    color: $text-muted;
+  }
 }
 
 @media screen and (max-width: $cut) {
   .timeline::after {
-    left: 31px;
+    left: 20px;
   }
 
   .container {
-    width: 100%;
-    padding-left: 70px;
-    padding-right: 25px;
-    &::before {
-      left: 60px;
-      border: medium solid $text;
-      border-width: 10px 10px 10px 0;
-    }
-  }
-
-  .one::before {
-    border-color: transparent $card-1 transparent transparent;
-  }
-
-  .two::before {
-    border-color: transparent $card-2 transparent transparent;
+    width: auto;
+    margin-left: 44px;
+    left: 0;
   }
 
   .one::after,
   .two::after {
-    left: 15px;
+    right: auto;
+    left: -35px;
   }
 
   .two {

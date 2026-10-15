@@ -1,17 +1,28 @@
 // Palette
 $bg: #1a222c;
-$bg-alt: #211a2c;
+$bg-alt: #201b2c;
 $text: #fff;
 $text-muted: rgba(255, 255, 255, 0.6);
 $accent: #594b64;
 $purple: #54516A;
 $overlay: rgba(255, 255, 255, 0.1);
 $overlay-strong: rgba(255, 255, 255, 0.2);
-$card-1: rgb(54, 38, 82);
-$card-2: rgb(52, 52, 97);
-$timeline-line: rgb(41, 32, 61);
-$timeline-dot: #3c334e;
+$glass: rgba(255, 255, 255, 0.03);
+$glass-border-hover: rgba(255, 255, 255, 0.35);
+
+// Typography
+$font-family: 'Montserrat', sans-serif;
+$fs-title: 2.5rem;       // section titles
+$fs-card-title: 1.5rem;  // titles inside cards
+$fs-body: 1rem;          // paragraphs, lists
+$fs-small: .875rem;      // dates, tabs, buttons
+$fw-title: 500;
 
 // Breakpoints
 $cut: 600px;
 $bp-stack: 1200px;
+
+// Layout
+$content-width: 960px;
+$section-gap: 3rem;
+$card-radius: 10px;

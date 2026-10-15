@@ -1,14 +1,14 @@
 @use 'vars' as *;
 
-@import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap');
 
 body {
     padding: 0;
     font-size: 100%;
     line-height: 1.5;
     color: $text;
-    background-image: linear-gradient($bg, $bg, $bg-alt, $bg-alt);
-    font-family: 'Montserrat', sans-serif;
+    background-image: linear-gradient($bg, $bg-alt);
+    font-family: $font-family;
 }
 article, aside, figcaption, figure, footer, header, nav, section {
     display: block;
@@ -17,20 +17,40 @@ h1, h2, h3, h4 {
     margin-top: 1em;
     padding-top: 1em;
     line-height: 1.25;
+    font-weight: $fw-title;
     color: inherit;
 }
 h1 {
-    font-size: 2.5rem;
+    font-size: $fs-title;
 }
 h2 {
     font-size: 2rem;
 }
 h3 {
-    font-size: 1.5rem;
+    font-size: $fs-card-title;
 }
 h4 {
-    font-size: 1rem;
+    font-size: $fs-body;
 }
+// Every top-level section shares one column
+#about,
+#projects,
+#experience {
+    width: 90%;
+    max-width: $content-width;
+    margin: 0 auto;
+}
+
+// Section titles share one rhythm
+.user-details {
+    text-align: center;
+    margin: 5px auto;
+    h1 {
+        margin: 0;
+        padding: $section-gap 0 1rem;
+    }
+}
+
 ul, ol {
     margin: 1em 0;
     padding-left: 40px;

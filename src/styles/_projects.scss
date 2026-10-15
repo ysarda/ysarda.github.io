@@ -4,27 +4,26 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 90%;
-  max-width: 960px;
-  margin: 0 auto;
-  @media only screen and (min-width: $cut) {
-    width: 80%;
-  }
 }
 
 .user-projects {
   position: relative;
   display: block;
-  margin: 20px auto;
+  margin: 0 0 1.5rem;
+  overflow: hidden;
   color: inherit;
-  transition: all .7s;
+  background-color: $glass;
+  border: 1px solid $overlay;
+  border-radius: $card-radius;
+  transition: all .4s;
   &:hover {
     background-color: $overlay;
+    border-color: $glass-border-hover;
   }
   img {
     max-width: 100%;
     height: auto;
-    border-radius: 5px;
+    border-radius: 6px;
   }
   h3 {
     margin-top: 0;
@@ -34,7 +33,7 @@
   }
   li {
     color: $text;
-    font-size: 1.1rem;
+    font-size: $fs-body;
   }
   p {
     margin-right: 5px;
@@ -55,9 +54,12 @@
 .contents-right {
   float: right;
   width: 55%;
-  margin: 10px 0 0;
-  padding-left: 20px;
+  padding-left: 1.5rem;
   box-sizing: border-box;
+  h3 {
+    margin-bottom: 0;
+    padding-top: 0;
+  }
 }
 
 // Clears the floated image/content columns
@@ -70,7 +72,7 @@
   position: relative;
   display: flex;
   width: 100%;
-  border-bottom: 1px solid $overlay-strong;
+  border-bottom: 1px solid $overlay;
 }
 
 .tab-button {
@@ -80,7 +82,8 @@
   background: transparent;
   border: none;
   color: $text-muted;
-  font-size: 14px;
+  font-family: inherit;
+  font-size: $fs-small;
   cursor: pointer;
   transition: all 0.3s ease;
   &:hover {
@@ -89,6 +92,7 @@
   &.active {
     background-color: $overlay;
     color: $text;
+    box-shadow: inset 0 -2px 0 $text;
   }
   &:focus-visible {
     outline: 2px solid $text;
@@ -103,6 +107,8 @@
   display: none;
   position: relative;
   width: 100%;
+  padding: 1.25rem;
+  box-sizing: border-box;
   &.active {
     display: block;
   }
@@ -115,7 +121,7 @@
   background-color: $overlay;
   border-radius: 4px;
   color: $text;
-  font-size: 14px;
+  font-size: $fs-small;
   text-decoration: none;
   transition: all 0.3s ease;
   &:hover {
@@ -129,9 +135,12 @@
 
 .tab-learn-more {
   position: absolute;
+  top: 0;
   right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  border-radius: 0;
 }
 
 .learn-more {
@@ -160,7 +169,7 @@
   color: $text;
   background-color: transparent;
   border: 1px solid $text;
-  border-radius: 10px;
+  border-radius: $card-radius;
   text-align: center;
   text-decoration: none;
   cursor: pointer;
